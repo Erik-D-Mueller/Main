@@ -149,10 +149,15 @@ no changes added to commit (use "git add" and/or "git commit -a")
 
 
 $ git add .
-<type or copy-paste the result here>
+
+There is no result, since there was no error, it simply added the file and displayed the prompt again.
+
 
 $ git commit -m "Good stopping point"
-<type or copy-paste the result here>
+
+[master 9e31816] Good stopping point
+ 1 file changed, 29 insertions(+), 6 deletions(-)
+Techs-MacBook-Air-30:m1-w1d1-intro-to-tools-exercises emueller$ 
 
 Note, you do not need to push this commit up to BitBucket. The typical Git 
 workflow is to many small commits to your local repo, with pushes up to 
@@ -165,16 +170,20 @@ BitBucket when a feature, fix, or in this case, assignment is finished.
 ----
 
 $ cd src/main/java/com/techelevator
-$ <enter command to display present working directory>
-<type or copy-paste your present working directory here>
 
+$ <enter command to display present working directory>
+
+Pwd
+
+<type or copy-paste your present working directory here>
+/Users/emueller/Development/erikmueller-java-green-exercises/m1-w1d1-intro-to-tools-exercises/java-helloworld/src/main/java/com/techelevator
 
 ----
 11. Does the change directory command in Exercise 10 use a relative, or absolute
     path?
 ----
 
-<type your answer here>
+A relative path, since it is only correct if we start from "java-helloworld".
 
 
 ----
@@ -183,8 +192,10 @@ $ <enter command to display present working directory>
 ----
 
 $ <enter command to list all files and folders including dot-files and dot-folders>
-<type or copy-paste the result here>
 
+drwxr-xr-x  3 emueller  staff   96 May 21 16:08 .
+drwxr-xr-x  3 emueller  staff   96 May 21 16:08 ..
+-rwxr-xr-x  1 emueller  staff  141 May 21 16:08 Helloworld.java
 
 ----
 13. "Helloworld.java" is the sole source code file of the Helloworld application.
@@ -198,7 +209,8 @@ The "cp" parameters are the name of the source file followed by the name of the
 destination file. 
 
 $ <enter command to list all files and folders in order to confirm the creation of the backup file>
-<type or copy-paste the result here>
+
+Helloworld.java		Helloworld.java.backup
 
 
 ----    
@@ -206,7 +218,7 @@ $ <enter command to list all files and folders in order to confirm the creation 
     command. (There is no rename command in UNIX.)
 ----
 
-$ mv Helloworld.java.backup Helloworld.java.copy
+$
 
 The "mv" parameters are the existing name of the file followed by the new name 
 of the file. 
@@ -214,6 +226,7 @@ of the file.
 $ <enter command to list all files and folders in order to confirm the renaming of the file>
 <type or copy-paste the result here>
 
+ Helloworld.java Helloworld.java.copy
 
 ----
 15. Let's call this a "feature completion" point in the exercises, and not only
@@ -221,7 +234,10 @@ $ <enter command to list all files and folders in order to confirm the renaming 
 ----
 
 $ <enter the Git command to display status>
+
 <type or copy-paste the result here>
+
+
 
 $ <enter the Git command to "stage" all changes>
 <type or copy-paste the result here>
@@ -230,7 +246,24 @@ $ <enter the Git command to save all "staged" changes>
 <type or copy-paste the result here>
 
 $ git push
-<type or copy-paste the result here>
+<type or copy-paste the result here>On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   ../../../../../../introduction-to-tools-exercises.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	Helloworld.java.copy
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Techs-MacBook-Air-30:techelevator emueller$ 
+
 
 
 ----
@@ -242,7 +275,8 @@ $ rm Helloworld.java.copy
 The "rm" parameter is the name of the file to be deleted.
 
 $ <enter command to list all files and folders in order to confirm the file deletion>
-<type or copy-paste the result here>
+
+Helloworld.java
 
 
 ----
@@ -275,7 +309,8 @@ $ <enter command to display present working directory>
 $ mkdir docs
 $ <enter the command to change directory to "docs" using a relative path>
 $ <enter command to display present working directory>
-<type or copy-paste your present working directory here>
+
+/Users/emueller/Development/erikmueller-java-green-exercises/m1-w1d1-intro-to-tools-exercises/java-helloworld
 
 ----
 19. Create a new file name "readme.txt" using Visual Studio Code, and add the text
