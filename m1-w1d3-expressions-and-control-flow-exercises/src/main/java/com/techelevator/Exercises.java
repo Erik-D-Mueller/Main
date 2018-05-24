@@ -702,7 +702,8 @@ return( a+b==c || a+c==b || b+c ==a );
 		
 		if(a==b && b==c) {return 0;}
 	
-return 5000; //it can't get here
+
+		return 5000; //it can't get here
 	}
 	
 	
