@@ -31,135 +31,137 @@ public class Exercises {
         1. 4 birds are sitting on a branch. 1 flies away. How many birds are left on
         the branch? 
         */
-		
+		{	
 		// ### EXAMPLE:  
 		int initialNumberOfBirds = 4;
 		int birdsThatFlewAway = 1;
 		int remainingNumberOfBirds = initialNumberOfBirds - birdsThatFlewAway;
-
+		}
         /* 
         2. There are 6 birds and 3 nests. How many more birds are there than
         nests? 
         */
-		
+		{
 		// ### EXAMPLE: 
 		int numberOfBirds = 6;
 		int numberOfNests = 3;
 		int numberOfExtraBirds = numberOfBirds - numberOfNests;
-
+		}
         /* 
         3. 3 raccoons are playing in the woods. 2 go home to eat dinner. How
         many raccoons are left in the woods? 
         */
-		
+		{
 		int totalRacoons = 3;
 		int racoonsThatGoToDinner = 2;
 		int racoonsLeftInWoods = totalRacoons - racoonsThatGoToDinner;
 		System.out.println(racoonsLeftInWoods);
-		
+		}
         /* 
         4. There are 5 flowers and 3 bees. How many less bees than flowers? 
         
         */
-
+		{   //I use the same variable names in different chunks, so these are to limit the scope.
+		
 		int numberOfFlowers = 5;
 		int numberOfBees = 3;
 		int lessBeesThanFLowers = numberOfFlowers - numberOfBees;
 		
+		}
 		
         /* 
         5. 1 lonely pigeon was eating breadcrumbs. Another pigeon came to eat
         breadcrumbs, too. How many pigeons are eating breadcrumbs now? 
         */
-
+		{
 		int pigeonsInitiallyEatingBreadCrumbs = 1;
 		int pigeonsThatCameLater = 1;
 		int pigeonsEatingNow = pigeonsInitiallyEatingBreadCrumbs + pigeonsThatCameLater;
 		
-		
+		}
         /* 
         6. 3 owls were sitting on the fence. 2 more owls joined them. How many
         owls are on the fence now? 
         */
 
-		
+		{
 		int initialOwls = 3;
 		int owlsJoined = 2;
 		int owlsOnFence = initialOwls + owlsJoined;
 		
-		
+		}
 		
         /* 
         7. 2 beavers were working on their home. 1 went for a swim. How many
         beavers are still working on their home? 
         */
-
+		{
 		int initialBeavers = 2;
 		int beaversLeftForSwim = 1;
 		int beaversLeftWorking = initialBeavers - beaversLeftForSwim;
-		
+		}
         /* 
         8. 2 toucans are sitting on a tree limb. 1 more toucan joins them. How
         many toucans in all? 
         */
-
+		{
 		int initialToucans = 2;
 		int toucansThatJoin = 1;
 		int toucansInAll = initialToucans + toucansThatJoin;
-		
+		}
         /* 
         9. There are 4 squirrels in a tree with 2 nuts. How many more squirrels
         are there than nuts? 
         */
-		
+		{
 		int squirrelsInTree = 4;
 		int nutsInTree = 2;
 		int moreSquirrelsThanNuts = squirrelsInTree - nutsInTree;	
-		
+		}
         /* 
         10. Mrs. Hilt found a quarter, 1 dime, and 2 nickels. How much money did
         she find? 
         */
-
+		{
 		int quarter =1;
 		int dime =1;
 		int nickel =2;
 		int money = quarter*(25) + dime*(10) + nickel*(5);
-		
+		}
         /* 
         11. Mrs. Hilt's favorite first grade classes are baking muffins. Mrs. Brier's
         class bakes 18 muffins, Mrs. MacAdams's class bakes 20 muffins, and
         Mrs. Flannery's class bakes 17 muffins. How many muffins does first
         grade bake in all? 
         */
-		
+		{
 		int muffinsFromBriersClass = 18;
 		int muffinsFromMacAdamsClass = 20;
 		int muffinsFromFlannerysClass = 17;
 		int totalMuffins = muffinsFromBriersClass + muffinsFromMacAdamsClass + muffinsFromFlannerysClass;
-		
+		}
 		
 		
         /*
         12. Mrs. Hilt bought a yoyo for 24 cents and a whistle for 14 cents. How
         much did she spend in all for the two toys?
         */
-        
+		{
 		int priceYoyo = 24;
 		int priceWhistle = 14;
 		int priceTotal = priceYoyo + priceWhistle;
-		
+		}
 		
         /*
         13. Mrs. Hilt made 5 Rice Krispie Treats. She used 8 large marshmallows
         and 10 mini marshmallows.How many marshmallows did she use
         altogether?
         */
-        
+		{
 		int largeMarshmallows = 8;
 		int miniMarshmallows = 10;
 		int totalMarshmallows = largeMarshmallows + miniMarshmallows;
-		
+		}
 		
 		
         /*
@@ -167,52 +169,53 @@ public class Exercises {
         Elementary School received 17 inches of snow. How much more snow
         did Mrs. Hilt's house have?
         */
-        
+		{
 		int inchesOfSnowHiltsHouse = 29;
 		int inchesOfSnowBrecknock = 17;
 		
 		int moreSnowAtHiltsHouse = inchesOfSnowHiltsHouse - inchesOfSnowBrecknock;
-				
+		}	
 		
         /*
         15. Mrs. Hilt has $10. She spends $3 on a toy truck and $2 on a pencil
         case. How much money does she have left?
         */
-        
+		{
 		int initialMoney = 10;
 		int truckPrice = 3;
 		int pencilPrice = 2;
 		int moneyLeft = initialMoney - truckPrice - pencilPrice;
-		
+		}
         /*
         16. Josh had 16 marbles in his collection. He lost 7 marbles. How many
         marbles does he have now?
         */
-        
+		{
+		
 		int initialMarbles = 16;
 		int lostMarbles = 7;
 		int marblesLeft = initialMarbles - lostMarbles;
 		
-		
-        /*
+		}
+        
+		/*
         17. Megan has 19 seashells. How many more seashells does she need to
         find to have 25 seashells in her collection?
         */
-        
+		{
 		int initialSeashells = 19;
 		int desiredNumberSeashells = 25;
 		int moreSeashellsNeeded = desiredNumberSeashells - initialSeashells;
-		
+		}
         /*
         18. Brad has 17 balloons. 8 balloons are red and the rest are green. How
         many green balloons does Brad have?
         */
-		
+		{
 		int totallBalloons = 17;
 		int redBalloons = 8;
 		int greenBalloons = totallBalloons - redBalloons;
-	
-		
+		}
 		
 		
         
@@ -220,57 +223,62 @@ public class Exercises {
         19. There are 38 books on the shelf. Marta put 10 more books on the shelf.
         How many books are on the shelf now?
         */
-        
+		{
 		int initialBooks = 38;
 		int addedBooks = 10;
-		
+		}
 		
         /*
         20. A bee has 6 legs. How many legs do 8 bees have?
         */
-        
+		
+		{
+			
 		int legsPerBee = 6;
 		int numberOfBees = 8;
 		int totalLegs = legsPerBee * numberOfBees;
 		
+		}
 		
         /*
         21. Mrs. Hilt bought an ice cream cone for 99 cents. How much would 2 ice
         cream cones cost?
         */
         
+		{
 		double priceIceCream = 0.99;
 		double numberOfCones = 2;
 		double totalCost = priceIceCream * numberOfCones;
+		}
 		
         /*
         22. Mrs. Hilt wants to make a border around her garden. She needs 125
         rocks to complete the border. She has 64 rocks. How many more rocks
         does she need to complete the border?
         */
-        
+		{
 		int initialRocks = 64;
 		int numberOfRocksRequired = 125;
 		int moreRocksNeeded = numberOfRocksRequired - initialRocks;
-		
+		}
         /*
         23. Mrs. Hilt had 38 marbles. She lost 15 of them. How many marbles does
         she have left?
         */
-        
+		{
 		int initialMarbles = 38;
 		int lostMarbles = 15;
 		int marblesLeft = initialMarbles - lostMarbles;
-		
+		}
         /*
         24. Mrs. Hilt and her sister drove to a concert 78 miles away. They drove 32
         miles and then stopped for gas. How many miles did they have left to drive?
         */
-        
+		{
 		int totalDistance = 78;
 		int distanceBeforeStopping = 32;
 		int milesLeftToDrive = totalDistance-distanceBeforeStopping;
-		
+		}
 		
         /*
         25. Mrs. Hilt spent 1 hour and 30 minutes shoveling snow on Saturday
@@ -290,11 +298,11 @@ public class Exercises {
         26. Mrs. Hilt bought 6 hot dogs. Each hot dog cost 50 cents. How much
         money did she pay for all of the hot dogs?
         */
-        
+		{
 		double priceHotDog = 0.50;
 		double numberHotDogsPurchased = 6;
 		double totalPrice = priceHotDog * numberHotDogsPurchased;
-		
+		}
 		
 		
 		
@@ -302,41 +310,41 @@ public class Exercises {
         27. Mrs. Hilt has 50 cents. A pencil costs 7 cents. How many pencils can
         she buy with the money she has?
         */
-        
+		{
 		double initialMoney = 0.50;
 		double pencilPrice = 0.07;
 		double numberOfPencilsSheCanBuy = initialMoney / pencilPrice;
-		
+		}
 		
         /*    
         28. Mrs. Hilt saw 33 butterflies. Some of the butterflies were red and others
         were orange. If 20 of the butterflies were orange, how many of them
         were red?
         */
-        
+		{
 		int totalButterflies = 33;
 		int orangeButterflies = 20;
 		int redButterflies = totalButterflies - orangeButterflies;
-	
+		}
 		
         /*    
         29. Kate gave the clerk $1.00. Her candy cost 54 cents. How much change
         should Kate get back?
         */
-        
+		{
 		double total = 1.00;
 		double costCandy = 0.54;
 		double change = total - costCandy;
-		
+		}
         /*
         30. Mark has 13 trees in his backyard. If he plants 12 more, how many trees
         will he have?
         */
-        
+		{
 		int initialTrees = 13;
 		int moreTreesPlanted = 12;
 		int totalTrees = initialTrees + moreTreesPlanted;
-		
+		}
 		
         /*    
         31. Joy will see her grandma in two days. How many hours until she sees
@@ -363,11 +371,11 @@ public class Exercises {
         33. Dan has $3.00. He bought a candy bar for $1.00. How much money is
         left?
         */
-		
+		{
 		double initialMoney = 3.00;
 		double moneySpent = 1.00;
 		double moneyLeft = initialMoney - moneySpent;
-		
+		}
         /*
         34. 5 boats are in the lake. Each boat has 3 people. How many people are
         on boats in the lake?
@@ -477,10 +485,10 @@ public class Exercises {
         orphanage. If two lemon cupcakes were left at home, how many
         boxes with 3 lemon cupcakes each were given away?
         */
-        
+   
 		int numberOfCakesBaked = 53;
 		int numberOfCakesLeftHome = 2;
-		int numberOfCakesPerBox;
+		int numberOfCakesPerBox=3;
 		int numberOfFullBoxes = (numberOfCakesBaked - numberOfCakesLeftHome) / numberOfCakesPerBox;
 		
 		/* Note that since numberOfFullBoxes is an int, it will "round down" and concatenate off the end" */
@@ -514,7 +522,7 @@ public class Exercises {
       
 		int totalPictures = 480;
 		int picturesPerAlbum = 20;
-		int albumsNeeded = Math.ceil( totalPictures / picturesPerAlbum );
+		int albumsNeeded = (int)Math.ceil( totalPictures / picturesPerAlbum );
 		
 		
         /*
@@ -584,7 +592,7 @@ public class Exercises {
 		String middleInitial = "D";
 		String totalName = lastName + ", " + firstName + " " + middleInitial + ".";
 		
-		Sys.println(totalName);
+		System.out.println(totalName);
 		
 		
 		

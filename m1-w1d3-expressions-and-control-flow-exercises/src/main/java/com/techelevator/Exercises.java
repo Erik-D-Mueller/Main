@@ -23,14 +23,14 @@ public class Exercises {
 	 sleepIn(false, true) → true
 	 */
 	public boolean sleepIn(boolean weekday, boolean vacation) {
-<<<<<<< HEAD
+
 		
 		return( vacation || !weekday );
 	
-=======
-		boolean sleepIn = !weekday || vacation;
-		return sleepIn;
->>>>>>> caf3b9c65a60abb03d58dc393b70f675b070723f
+
+		// boolean sleepIn = !weekday || vacation;
+		// return sleepIn;
+
 	}
 	/*
 	 2. We have two monkeys, a and b, and the parameters aSmile and bSmile indicate if each is smiling. 
@@ -53,7 +53,7 @@ public class Exercises {
 	 sumDouble(2, 2) → 8
 	 */
 	public int sumDouble(int a, int b) {
-<<<<<<< HEAD
+
 	
 		
 		if(a==b) {
@@ -61,16 +61,16 @@ public class Exercises {
 			
 		}else {return a+b;}
 	
-=======
-		int sum = 0;
-		if (a == b) {
-			sum = 2 * (a+b);
-		}
-		else {
-			sum = a+b;
-		}
-		return sum;
->>>>>>> caf3b9c65a60abb03d58dc393b70f675b070723f
+
+//		int sum = 0;
+//		if (a == b) {
+//			sum = 2 * (a+b);
+//		}
+//		else {
+//			sum = a+b;
+//		}
+//		return sum;
+
 	}
 
 	/*

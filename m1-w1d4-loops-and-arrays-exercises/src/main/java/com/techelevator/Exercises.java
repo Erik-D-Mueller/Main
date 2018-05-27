@@ -9,10 +9,22 @@ public class Exercises {
 	 firstLast6([6, 1, 2, 3]) → true
 	 firstLast6([13, 6, 1, 2, 3]) → false
 	 */
+	
 	public boolean firstLast6(int[] nums) {
 		
 		return (nums[0] == 6 || nums[nums.length-1] == 6);
 			
+/*
+/		if (nums[0] == 6 || nums[nums.length -1] == 6) {
+/			return true;
+/		} 
+/		else {
+/		  return false;
+/		}
+*/
+
+	
+	
 	}
 
 	/*
