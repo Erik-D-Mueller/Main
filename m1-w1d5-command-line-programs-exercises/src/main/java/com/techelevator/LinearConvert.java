@@ -22,13 +22,36 @@ public class LinearConvert {
 
 	public static void main(String[] args) {
 
-		
 		Scanner userInput = new Scanner(System.in);
-		
-		
 		
 		System.out.print("Please enter a length:");
 		
+		String length = userInput.nextLine();
+		
+		System.out.println("Is the measurement in (m)eters or (f)eet?");
+		
+		String unit = userInput.nextLine();
+		
+		int lengthNumber = (int) (Integer.parseInt(length));
+		
+		if(unit.equals("f")) {
+			
+			int result = (int) (lengthNumber * 0.3048);
+			
+			System.out.print(lengthNumber + "f is " + result + "m");
+	
+		}
+		
+		if(unit.equals("m")) {
+			
+			int result = (int) (lengthNumber * (1/0.3048));
+			
+			System.out.print(lengthNumber + "m is " + result + "f");
+	
+		}
+		
+		
+
 		
 	}
 

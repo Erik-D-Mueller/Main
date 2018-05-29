@@ -21,65 +21,117 @@ Please enter in a series of decimal values (separated by spaces): 460 8218 1 313
 public class DecimalToBinary {
 
 	public static void main(String[] args) {
-
-	int binaryArray[];
 	
+	int[] binaryArray;
+		
 	binaryArray = new int[1000000];  // An array to hold the binary 0s & 1s
 		
 	Scanner userInput = new Scanner(System.in);
+	
+	System.out.println("Please enter in a series of decimal values (seperated by spaces)");
 	
 	String chunk = userInput.nextLine();
 	
 	String[] numsArray = chunk.split(" ");  //This apparently does the entire chunk of input
 	
 	
+	for(int i=0; i<numsArray.length; i++) {    //This loop runs once for each base10 number
 	
-	int number = (int) (Integer.parseInt(numsArray[i]) * 0.378);
+int base10Number = (int) (Integer.parseInt(numsArray[i]));  // Put the base10 number into the variable base10Number
 	
-	
-	
-	
-	
-	
+
 	/*
-	 * 
-	 * This loop looks for the biggest power of 2 that will fit inside the base10 number.  If
-	 * it finds a power of 2 that fits exactly, then that is the highest power of 2 that fits.  
-	 * If it does not find a power of 2 that fits exactly, then the previous power of is
-	 * the largest that will fit, so it subtracts 1 from i.
-	 * 
-	 * 
+	 * The following loop looks for the biggest power of 2 that will fit inside the base10 number.
+	 * It inserts the number into "topPosition" variable.
 	 */
-	
-	
 	
 	int topPosition = 0;
-	for(int i=0; (2^i) < number; i++) {  
-		if( (2^i)==number) { 		
-			topPosition=i;
+	
+	//System.out.println("The base10Number is " + base10Number);
+	
+	
+	for(int j=0; true; j++) {  
+		
+		
+		
+		if( (Math.pow(2, j))==base10Number) { 		
+			topPosition=j;
+			break;
 		}
-		if( (2^i)>number) { 
-			topPosition=i-1;
+		if( (Math.pow(2,j))>base10Number) { 
+			topPosition=j-1;
+			break;
 		}
 	
+	
 	}
+	
+	
+	
+	//System.out.println("The top position variable is " + topPosition + ". ");
+	
+	 //  So now the variable "topPosition" holds the biggest power of 2 that will fit
+	
+	
 	
 	/*
-	 * So now the variable topPosition holds
-	 * 
-	 * 
-	 * 
-	 * 
+	 * The equations for converting from base10 to binary is to find the biggest power of 2	
+	 * that will fit inside the base number, mark that position as a 1, subtract
+	 * that base10 value from the base10 number, then find the next biggest power of 2 number
+	 * that will fit inside of the value of what's left, and keep going down from there.
 	 */
+
 	
+	for(int k=0; k< topPosition;k++) {  //this resets all the necesary parts of binary array to zero
+		
+		binaryArray[k]=0;
+	}
 	
+
+	binaryArray[topPosition]=1;  //Assign a 1 to the biggest power of 2 that will fit inside the base 10 number
 	
+	System.out.println(""); //Start a new line for the next base10Number
 	
+	System.out.print(base10Number + " in binary is ");
 	
+
+	do{
+		 
+		if(Math.pow(2.0,  topPosition)<=base10Number) { //If the power of 2 can be subtracted from the base10number then mark it a 1, otherwise it is left as a zero.
+			binaryArray[topPosition]=1;
+		
+			base10Number-= (Math.pow(2.0,  topPosition));  //Subtract that value from the base10 number, since it has been accounted for
+			
+		}
 	
-	
-	
+		System.out.print(binaryArray[topPosition]);
+		
+		
+		topPosition--;     //Move down by a power of 2
+		
+	}while(topPosition>=0);
+	 
+	 
+
+
 	
 	}
-
+	
+	
+	
+	
+	
+	
 }
+	
+}
+	
+	
+	
+	
+	
+	
+	
+	
+
+
