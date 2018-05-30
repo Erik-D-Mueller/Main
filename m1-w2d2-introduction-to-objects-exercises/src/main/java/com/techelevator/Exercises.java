@@ -9,7 +9,12 @@ public class Exercises {
 	 helloName("X") → "Hello X!"
 	 */
 	public String helloName(String name) {
-		return null;
+		
+		name = ("Hello " + name + "!");
+		
+		// System.out.print(name);
+		
+		return name;
 	}
 
 	/*
@@ -20,7 +25,12 @@ public class Exercises {
 	 makeAbba("What", "Up") → "WhatUpUpWhat"
 	 */
 	public String makeAbba(String a, String b) {
-		return null;
+		
+		String total=new String();
+		
+		total = a + b + b + a;
+		
+		return total;
 	}
 
 	/*
@@ -32,7 +42,15 @@ public class Exercises {
 	 makeTags("cite", "Yay") → "<cite>Yay</cite>"
 	 */
 	public String makeTags(String tag, String word) {
-		return null;
+		
+		String result = new String();
+		
+		//result = "<" + tag + ">" + word + "</" + tag + ">";
+		
+		return "<" + tag + ">" + word + "</" + tag + ">";
+		
+		
+		
 	}
 
 	/*
@@ -44,7 +62,10 @@ public class Exercises {
 	 makeOutWord("[[]]", "word") → "[[word]]"
 	 */
 	public String makeOutWord(String out, String word) {
-		return null;
+	
+		return out.substring(0, 2) + word + out.substring(2,4);
+		
+		
 	}
 
 	/*
@@ -55,7 +76,15 @@ public class Exercises {
 	 extraEnd("Hi") → "HiHiHi"
 	 */
 	public String extraEnd(String str) {
-		return null;
+		
+		return    str.substring(str.length()-2, str.length()-1)
+				+ str.substring(str.length()-1, str.length())
+				+ str.substring(str.length()-2, str.length()-1)
+				+str.substring(str.length()-1, str.length()) 
+				+str.substring(str.length()-2, str.length()-1) 
+				+str.substring(str.length()-1, str.length());
+		
+		
 	}
 
 	/*
@@ -67,7 +96,13 @@ public class Exercises {
 	 firstTwo("ab") → "ab"
 	 */
 	public String firstTwo(String str) {
-		return null;
+		
+		
+		if(str.length()>=2) { return str.substring(0, 2); }
+		if(str.length()==1) { return str.substring(0);}
+		if(str.length()==0 ) {return "";}
+		
+		return ""; //THis code is unreachable but it seems to want a return statement here.
 	}
 
 	/*
@@ -77,7 +112,9 @@ public class Exercises {
 	 firstHalf("abcdef") → "abc"
 	 */
 	public String firstHalf(String str) {
-		return null;
+		
+		return str.substring(0, (str.length()/2));
+	
 	}
 
 	/*
@@ -88,7 +125,9 @@ public class Exercises {
 	 withoutEnd("coding") → "odin"
 	 */
 	public String withoutEnd(String str) {
-		return null;
+		
+		return str.substring(1, str.length()-1);
+		
 	}
 	
 	/*
@@ -100,7 +139,10 @@ public class Exercises {
 	 comboString("aaa", "b") → "baaab"
 	 */
 	public String comboString(String a, String b) {
-		return null;
+		
+		if(a.length()<=b.length()) {  return a + b + a; }
+		else {return b + a + b;}
+	
 	}
 	
 	/*
@@ -111,7 +153,9 @@ public class Exercises {
 	 nonStart("shotl", "java") → "hotlava"
 	 */
 	public String nonStart(String a, String b) {
-		return null;
+		
+		return a.substring(1, a.length()) + b.substring(1,  b.length());
+		
 	}
 
 	/*
@@ -121,8 +165,11 @@ public class Exercises {
 	 left2("java") → "vaja"
 	 left2("Hi") → "Hi"
 	 */
+	
 	public String left2(String str) {
-		return null;
+		
+		return str.substring(2) + str.substring(0,2);	
+		
 	}
 
 	/*
@@ -133,7 +180,9 @@ public class Exercises {
 	 right2("Hi") → "Hi"
 	 */
 	public String right2(String str) {
-		return null;
+		
+		return str.substring(str.length()-2) + str.substring(0, str.length()-2);
+		
 	}
 
 	/*
@@ -144,7 +193,11 @@ public class Exercises {
 	 theEnd("oh", true) → "o"
 	 */
 	public String theEnd(String str, boolean front) {
-		return null;
+		
+		if(front){ return str.substring(0, 1); }
+		
+		else {return str.substring(str.length()-1);}
+
 	}
 
 	/*
@@ -155,7 +208,19 @@ public class Exercises {
 	 withouEnd2("ab") → ""
 	 */
 	public String withouEnd2(String str) {
-		return null;
+			
+		String result = new String();
+		
+
+		if(str.length()>2  ) {
+			
+		result = result + str.substring(1,str.length()-1);
+		
+		return result;
+			
+		}
+	
+	return "";
 	}
 
 	/*
@@ -166,7 +231,9 @@ public class Exercises {
 	 middleTwo("Practice") → "ct"
 	 */
 	public String middleTwo(String str) {
-		return null;
+		
+		return str.substring((str.length()/2)-1, (str.length()/2) +1);
+		
 	}
 
 	/*
@@ -176,7 +243,20 @@ public class Exercises {
 	 endsLy("oddy") → false
 	 */
 	public boolean endsLy(String str) {
+	
+		String lastTwo = new String();
+		
+		if(str.length() >= 2 ) { 
+			
+		//lastTwo = str.substring(str.length() - 2); 
+		//return lastTwo.equals("ly");
+		
+		return str.substring(str.length() - 2).equals("ly");
+		
+		}
+		
 		return false;
+		
 	}
 
 	/*
@@ -187,7 +267,8 @@ public class Exercises {
 	 nTwice("Chocolate", 1) → "Ce"
 	 */
 	public String nTwice(String str, int n) {
-		return null;
+		
+		return str.substring(0,  n) + str.substring(str.length()-n);
 	}
 
 	/*
@@ -199,7 +280,14 @@ public class Exercises {
 	 twoChar("java", 3) → "ja"
 	 */
 	public String twoChar(String str, int index) {
-		return null;
+		
+		
+		
+		if( index <= (str.length()-2) && index >= 0)    { return str.substring(index, index + 2 ); }
+			
+		else return str.substring(0,2);
+	
+		
 	}
 
 	/*
@@ -210,7 +298,9 @@ public class Exercises {
 	 middleThree("solving") → "lvi"
 	 */
 	public String middleThree(String str) {
-		return null;
+			
+		return str.substring((str.length()/2 - 1), str.length()/2 + 2);
+	
 	}
 
 	/*
@@ -222,7 +312,12 @@ public class Exercises {
 	 hasBad("xxbadxx") → false
 	 */
 	public boolean hasBad(String str) {
-		return false;
+		
+		if( str.length() < 3 ) { return false;}
+		if( str.length()==3) { return str.substring(0, 3).equals("bad"); } 
+		if( str.length()>=4) { return (str.substring(0, 3).equals("bad") || str.substring(1,4).equals("bad"));}	
+		
+		return false;  //It won't work without this placeholder, even though this placeholder is unreachable code
 	}
 
 	/*
@@ -232,7 +327,18 @@ public class Exercises {
 	 stringTimes("Hi", 1) → "Hi"
 	 */
 	public String stringTimes(String str, int n) {
-		return null;
+		
+		String total = new String();
+		
+		//total = total + str; //Does this create an alias?
+				
+		for(int i=0; i<=(n-1); i++) {	
+			
+			total = total + str;	
+		}
+		
+		return total;
+	
 	}
 
 	/*
@@ -243,8 +349,38 @@ public class Exercises {
 	 frontTimes("Abc", 3) → "AbcAbcAbc"
 	 */
 	public String frontTimes(String str, int n) {
-		return null;
+	
+		
+		if(str.length() > 0) {
+		
+		String total = new String();
+		
+		
+		//total = total + str; //Does this create an alias?
+		
+		//int firstIndex = 0;
+		int lastIndex = Math.min(3, str.length());
+		
+		
+		for(int i=0; i<=(n-1); i++) {	
+			
+			total = total + str.substring(0, lastIndex);	
+		}
+		
+		return total;
+		
 	}
+		 
+		
+		
+		
+		return "";
+		
+		
+		
+	
+	}
+	
 
 	/*
 	 Count the number of "xx" in the given string. We'll say that overlapping is allowed, so "xxx" contains 2 "xx".
@@ -253,9 +389,28 @@ public class Exercises {
 	 countXX("xxxx") → 
 	 */
 	public int countXX(String str) {
-		return 0;
+	
+		
+		
+		if (str.length()>=2) {
+		
+		int sum = 0;
+		
+		for(int i = 0; i < str.length()-1; i++) {
+			
+			if(str.substring(i,i+2).equals("xx")) {sum++;}
+			
+		}
+		
+		return sum;
+		
+		}
+		
+return 0;
+
 	}
 
+	
 	/*
 	 Given a string, return true if the first instance of "x" in the string is immediately followed by another "x".
 	 doubleX("axxbb") → true
@@ -263,6 +418,36 @@ public class Exercises {
 	 doubleX("xxxxx") → true
 	 */
 	public boolean doubleX(String str) {
+	
+
+		if (str.length()>=2) {
+		
+		int sum = 0;
+		
+		for(int i = 0; i < str.length()-1; i++) {
+			
+			if(str.substring(i,i+1).equals("x")) {
+				
+				if(str.substring(i+1, i+2).equals("x")) {return true;}
+				else {return false;}
+				
+				
+			
+		}
+		}
+		
+return false; // It only reaches this code if we never even found a first "x"
+
+	}
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		return false;
 	}
 
@@ -273,7 +458,24 @@ public class Exercises {
 	 stringBits("Heeololeo") → "Hello"
 	 */
 	public String stringBits(String str) {
-		return null;
+		
+		String result = new String();
+		
+		for(int i=0; i<str.length(); i++) {
+			
+			
+			if(  (i%2) == 0) {
+				
+				result = result + str.substring(i, i+1);	
+				
+			}
+			
+			
+		}
+		
+		return result;
+	
+
 	}
 
 	/*
@@ -282,9 +484,25 @@ public class Exercises {
 	 stringSplosion("abc") → "aababc"
 	 stringSplosion("ab") → "aab"
 	 */
+	
 	public String stringSplosion(String str) {
-		return null;
+		
+		String result = new String();
+		
+		for(int i = 0; true; i++) {
+		
+			result = result + str.substring(0, i+1);
+			
+			//This breaks the loop once we have appended the entire word to the end
+			if ( str.substring(0, i+1).equals(str) ) { break;}
+
+		}
+
+return result;	
+		
 	}
+	
+	
 
 	/*
 	 Given a string, return the count of the number of times that a substring length 2 appears in the string and 
@@ -293,8 +511,28 @@ public class Exercises {
 	 last2("xaxxaxaxx") → 1
 	 last2("axxxaaxx") → 2
 	 */
+	
+	
+	//Translation :Take the last two characters and search for them in the rest of the code
+	
 	public int last2(String str) {
-		return 0;
+	
+		int sum = 0;		
+		
+		if (str.length()>=4) {
+			
+			for(int i = 0; i < str.length()-2; i++) {
+				
+				if(str.substring(i,i+2).equals(       str.substring(str.length()-2, str.length())     )) {sum++;}
+				
+			}
+			
+			return sum;
+			
+			}
+			
+	return 0;
+		
 	}
 
 	/*
@@ -305,7 +543,20 @@ public class Exercises {
 	 stringX("xabxxxcdx") → "xabcdx"
 	 */
 	public String stringX(String str) {
-		return null;
+		
+		String result = new String();
+	
+		if (str.length()>=1) {
+			
+			for(int i = 0; i < str.length(); i++) {
+				
+				if(      !str.substring(i,i+1).equals("x")     ||     (       (str.substring(i,i+1).equals("x"))  &&  ( i==0    ||   i==str.length()-1)      )      )    { result = result + str.substring(i,i+1);}  //If it does not equal x or if it does equal x but it is either the first or last position, then copy it through
+					
+			}
+			
+		}		
+	
+		return result;
 	}
 
 	/*
@@ -315,7 +566,23 @@ public class Exercises {
 	 altPairs("CodingHorror") → "Congrr"
 	 */
 	public String altPairs(String str) {
-		return null;
+	
+	String result = new String();
+		
+	
+	for(int i=0; true; i+=4) {
+			
+			if(i>=str.length()) { return result; }	
+			
+			result = result + str.substring(i, i+1);  //02,  
+			
+			if( i+2 > str.length()) { return result; }
+			
+			result = result + str.substring(i+1, i+2);
+		
+			
+		}		
+	
 	}
 
 	/*
@@ -326,7 +593,39 @@ public class Exercises {
 	 stringYak("yak123ya") → "123ya"
 	 */
 	public String stringYak(String str) {
-		return null;
+		
+		String result = new String();
+	
+		int counter = 0;
+		
+		if (str.length()>=3) {
+			
+			for(int i = 0; i < str.length()-2; i++) {   // It's minus 2 because the beginning of the 3 characters must stop at 3 before the end of the stirng or else the end of the 3 characters is out of bounds on the string
+					
+				
+
+				if(   str.substring(i,i+3).equals("yak")   ) { counter = 3; }  // If "yak" is found, then tell the program not to copy the next 3 characters
+				
+				if(counter==0) { result = result + str.substring(i, i+1);}
+				else if( counter!=0){counter--;} //if counter does not equal zero, then subtract one to note that we have skipped one letter
+			
+				
+				//For most of the string, the characters are added as the 3 position search moves, but the last two need to be added separately, hence the below line of code
+				
+				
+				if(i == str.length()-3  && counter == 0 ) { result = result + str.substring(str.length()-2); }  //
+				
+				System.out.println(str);
+				System.out.println(result);
+			
+			}
+					
+		return result;
+
+		}
+			
+		return str; //if str is less than 3 long, simply return it because "yak" cannot exist in it
+		
 	}
 	
 }
