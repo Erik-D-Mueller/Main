@@ -21,9 +21,20 @@ public class Exercises {
 	 array2List( {"Red", "Orange", "Yellow"} )  ->  ["Red", "Orange", "Yellow"]
 	 array2List( {"Left", "Right", "Forward", "Back"} )  ->  ["Left", "Right", "Forward", "Back"] 
 	 */
+	
 	public List<String> array2List(String[] stringArray) {
-		return null;
+		
+		ArrayList<String> list = new ArrayList<>();
+		
+		for(int i =0; i < stringArray.length; i++) {   //Why does it not accept length()  ?
+			
+			list.add(stringArray[i]);
+			
+		}	
+		
+		return list;
 	}
+	
 	
 	/*
 	 Given a list of Strings, return an array containing the same Strings in the same order 
@@ -31,33 +42,76 @@ public class Exercises {
 	 list2Array( ["Red", "Orange", "Yellow"] )  ->  {"Red", "Orange", "Yellow"}
 	 list2Array( ["Left", "Right", "Forward", "Back"] )  ->  {"Left", "Right", "Forward", "Back"}
 	 */
+	
 	public String[] list2Array(List<String> stringList) {
-		return null;
+			
+			String[] namesArray = stringList.toArray(new String[stringList.size()]);		
+			
+		return namesArray;
 	}
 	
 	/*
 	 Given an array of Strings, return an ArrayList containing the same Strings in the same order 
 	 except for any words that contain exactly 4 characters.
+	 
 	 no4LetterWords( {"Train", "Boat", "Car"} )  ->  ["Train", "Car"]
 	 no4LetterWords( {"Red", "White", "Blue"} )  ->  ["Red", "White"]
 	 no4LetterWords( {"Jack", "Jill", "Jane", "John", "Jim"} )  ->  ["Jim"]
+	 
 	 */
 	public List<String> no4LetterWords(String[] stringArray) {
-		return null;
-	}
+		
+		ArrayList<String> list = new ArrayList<>();
 
+		for(int i = 0; i < stringArray.length; i++) {   //Why does it not accept length()  ?
+			
+			if(stringArray[i].length()!=4){      list.add(stringArray[i]);     }	
+			
+			}
+
+	return list;	
+	
+	}
 
 	/*
 	 Given a List of Strings, return a new list in reverse order of the original. One obvious solution is to
 	 simply loop through the original list in reverse order, but see if you can come up with an alternative
-	 solution. (Hint: Think LIFO (i.e. stack))
+	 solution. 
+	 
+	 (Hint: Think LIFO (i.e. stack))
+	 
 	 reverseList( ["purple", "green", "blue", "yellow", "green" ])  -> ["green", "yellow", "blue", "green", "purple" ]
 	 reverseList( ["jingle", "bells", "jingle", "bells", "jingle", "all", "the", "way"} )
 		-> ["way", "the", "all", "jingle", "bells", "jingle", "bells", "jingle"]
 	 */
 	public List<String> reverseList(List<String> stringList) {
-		return null;
-	}
+		
+		Stack<String> myStack = new Stack<>();   //This creates a stack called "myStack"
+		
+		ArrayList<String> list = new ArrayList<>();  //This creates the list that we're going to return
+	
+		for(String tempHolder:stringList) {   //this iterates through stringList, using the varaible tempHolder
+				
+				myStack.push(tempHolder);	
+				
+			}
+		
+		
+		stringList.clear();   // This clears out the list stringList, so that I can reuse it, instead of making a new list element, although making a new one works as well.
+		
+		System.out.println("myStack.size() is " + myStack.size());
+		
+		while(myStack.size() > 0)   //Keep popping until there is nothing left
+			
+			{
+						
+				stringList.add(  myStack.pop()  );
+	
+			}
+		
+		return stringList;
+				
+		}
 
 	/*
 	 Given an array of ints, divide each int by 2, and return an ArrayList of Doubles.
@@ -66,7 +120,23 @@ public class Exercises {
 	 arrayInt2ListDouble( {84, 99, 3285, 13, 877} ) -> [42, 49.5, 1642.5, 6.5, 438.5]
 	 */
 	public List<Double> arrayInt2ListDouble(int[] intArray) {
-		return null;
+	
+		ArrayList<Double> list = new ArrayList<>();
+		ArrayList<Double> anotherList = new ArrayList<>();
+		
+		for(int i =0; i < intArray.length; i++) {   //Why does it not accept length()  ?
+			
+			list.add(     (double)intArray[i]     );  //This takes the value out of inArray, castes it as a double, then tacks it onto list
+			
+		}	
+		
+		for(Double tempHolder:list) {  //Iterate through each item in list		
+		
+			anotherList.add(tempHolder/2);
+		
+		}
+		
+		return anotherList;   // Is there a way to solve this without creating a new list?
 	}
 	
 	/*
@@ -76,7 +146,15 @@ public class Exercises {
 	 findLargest( [34070, 1380, 81238, 7782, 234, 64362, 627] ) -> 64362
 	 */
 	public Integer findLargest(List<Integer> integerList) {
-		return null;
+	
+		int maximum = 0;
+		for(Integer tempHolder:integerList) {
+			
+		maximum = Math.max(maximum, tempHolder);
+		
+		}
+		
+		return maximum;   // Is there a better way to do this?  Without iterating through each entry?
 	}
 	
 	/*
@@ -85,8 +163,18 @@ public class Exercises {
 	 oddOnly( {1143, 555, 7, 1772, 9953, 643} ) -> [1143, 555, 7, 9953, 643]
 	 oddOnly( {734, 233, 782, 811, 3, 9999} ) -> [233, 811, 3, 9999]  
 	 */
+	
 	public List<Integer> oddOnly(Integer[] integerArray) {
-		return null;
+	
+		ArrayList<Integer> list = new ArrayList<>();
+		
+		for(int i = 0; i < integerArray.length; i++) {
+			
+			if( integerArray[i]%2!=0) { list.add(integerArray[i]); }
+	
+		}
+			
+		return list;
 	}
 	
 	/* 
@@ -97,7 +185,16 @@ public class Exercises {
 	 foundIntTwice( [9, 23, 44, 2, 88, 44], 44) -> true
 	 */
 	public boolean foundIntTwice(List<Integer> integerList, int intToFind) {
-		return false;
+		
+		int sum = 0;
+		
+		for(Integer tempNum:integerList) {
+			
+			if(tempNum==intToFind) { sum++; }
+			
+		}
+		
+		return sum>=2;
 	}
 	
 	/*
@@ -113,7 +210,25 @@ public class Exercises {
 	 HINT: To convert an integer x to a string you can call x.toString() in your code (e.g. if x = 1 then x.ToString() equals "1")
 	 */
 	public List<String> fizzBuzzList(Integer[] integerArray) {
-		return null;
+	
+		ArrayList<String> list = new ArrayList<>();
+		
+		for(int i=0; i < integerArray.length; i++) {   //Loop through the array, check each value before committing it to the list
+			
+			if( integerArray[i]%3==0 && integerArray[i]%5!=0 )  {            list.add("Fizz"); 	     			 }   //If it's a multiple of 3 but not 5 then replace with the word "Fizz"
+			
+			else if( integerArray[i]%3!=0 && integerArray[i]%5==0 )  {       list.add("Buzz");        			 }   //If it's a multiple of 5 but not 3 then replace with the word "Buzz"
+			
+			else if(integerArray[i]%3==0 && integerArray[i]%5==0) 	{  		list.add("FizzBuzz");    			 }   //If it's a multiple of BOTH 3 AND 5 then replace with "FizzBuzz"
+			
+			else 												{ list.add(integerArray[i].toString());      }   // If it's not a multiple of either 3 or 5 then it gets passed from the array to the list cleanly
+				
+			
+		}
+		
+		return list;
+		
+
 	}
 
 	/*
@@ -124,7 +239,17 @@ public class Exercises {
 	 interleaveLists( [1, 2, 3], [4, 5, 6] )  ->  [1, 4, 2, 5, 3, 6]
 	 */
 	public List<Integer> interleaveLists(List<Integer> listOne, List<Integer> listTwo) {
-		return null;
+		
+		ArrayList<Integer> resultList = new ArrayList<>();
+		
+		for(int i = 0; i < listOne.size() || i < listTwo.size(); i++ ) {
+			
+			if ( i<listOne.size() )   {	resultList.add(	listOne.get(i)	);   	}
+			if(i<listTwo.size() )   { resultList.add( listTwo.get(i));		}
+			
+		}
+		
+		return resultList;
 	}
 
 	/*
@@ -132,12 +257,44 @@ public class Exercises {
 	 (Any seat number less than 1, or greater than 30 is invalid, and can be ignored.) Preserve the order
 	 in which the seat number entered their associated group. Return a list of the grouped Integers 1-10,
 	 11-20, and 21-30. (Hint: Think multiple queues)
+	 
 	 boardingGate( [1, 13, 43, 22, 8, 11, 30, 2, 4, 14, 21] ) -> [1, 8, 2, 4, 13, 11, 14, 22, 30, 21]
 	 boardingGate( [29, 19, 9, 21, 11, 1, 0, 25, 15, 5, 31] ) -> [9, 1, 5, 19, 11, 15, 29, 21, 25]
 	 boardingGate( [0, -1, 44, 31, 17, 7, 27, 16, 26, 6] ) -> [7, 6, 17, 16, 27, 26]
 	 */
+	
 	public List<Integer> boardingGate(List<Integer> seatNumberList) {
-		return null;
+		
+		Queue<Integer> queue110=new LinkedList<Integer>();  // This declares the queue to hold 1-10
+		
+		Queue<Integer> queue1120=new LinkedList<Integer>();  // This declares the queue to hold 11-20
+		
+		Queue<Integer> queue2130=new LinkedList<Integer>();  // This declares the queue to hold 21-30
+	
+	
+		for( int i = 0; i < seatNumberList.size(); i++ ) { // This loop iterates through seatNumberList, the if-statements decide which queue to put each number, if at all
+			
+			if(seatNumberList.get(i) > 0 && seatNumberList.get(i) < 11)		{ queue110.add(seatNumberList.get(i) );		}   //If the number is between 1 and 10, put it here
+			
+			else if(seatNumberList.get(i) > 10 && seatNumberList.get(i) < 21)	{ queue1120.add(seatNumberList.get(i) );		}   //If the number is between 11 and 20, put it here
+			
+			else if(seatNumberList.get(i) > 20 && seatNumberList.get(i) < 31)	{ queue2130.add(seatNumberList.get(i) );		}   //If the number is between 21 and 30, put it here
+			
+			else{  seatNumberList.get(i);  } // If the number is out of bounds then "vaporize it"
+			
+		}  // Now that we have our data in three queues, we need to reassemble it into one object
+		
+		seatNumberList.clear();  // I will reuse this ArrayList.  This statement clears it out before I write to it again.
+		
+		for(Integer tempNum: queue110) { seatNumberList.add(tempNum);}  // Add 1-10 to the list
+		
+		for(Integer tempNum: queue1120) { seatNumberList.add(tempNum);}  // Add 11-20 to the list
+		
+		for(Integer tempNum: queue2130) { seatNumberList.add(tempNum);}  // Add 21-30 to the list
+		
+	return seatNumberList;
+	
+	
 	}
 
 }
