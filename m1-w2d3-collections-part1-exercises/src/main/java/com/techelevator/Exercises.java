@@ -245,6 +245,7 @@ public class Exercises {
 		for(int i = 0; i < listOne.size() || i < listTwo.size(); i++ ) {
 			
 			if ( i<listOne.size() )   {	resultList.add(	listOne.get(i)	);   	}
+			
 			if(i<listTwo.size() )   { resultList.add( listTwo.get(i));		}
 			
 		}
