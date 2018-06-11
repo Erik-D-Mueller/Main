@@ -21,11 +21,11 @@ import java.util.Scanner;
  Note why Tf - 32 above is enclosed in parentheses with a comment inside your code. You'll feel better for it, 
  and will start building some good programming habits while you're at it.
  */
+
 public class TempConvert {
 
-	public static void main(String[] args) {
 
-	
+	public static void main(String[] args) {
 	
 Scanner userInput = new Scanner(System.in);
 		
@@ -43,8 +43,6 @@ Scanner userInput = new Scanner(System.in);
 			
 			int tc = (int) ((temp - 32)/1.8);
 			
-			
-			
 			System.out.print(temp + "c is " + tc + "f");
 	
 		}
@@ -56,7 +54,6 @@ Scanner userInput = new Scanner(System.in);
 			System.out.print(temp + "f is " + tf + "c");
 	
 		}
-	
 	
 	}
 
