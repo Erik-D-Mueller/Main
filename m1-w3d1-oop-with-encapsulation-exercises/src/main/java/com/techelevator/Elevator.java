@@ -6,9 +6,9 @@ int currentFloor = 1;
 int numberOfFloors;
 boolean doorOpen;
 
-public Elevator(int totalNumberOffloors) {
+public Elevator(int totalNumberOfFloors) {
 	
-	this.numberOfFloors = totalNumberOffloors;	
+	this.numberOfFloors = totalNumberOfFloors;	
 	
 }
 
@@ -28,25 +28,34 @@ public int getNumberOfFloors() {
 
 
 
-public boolean getDoorOpen() {
+public boolean isDoorOpen() {
 	
 	return this.doorOpen;
 	
 }
 
+public void openDoor() {
+	
+	doorOpen = true;
+	
+}
+
+public void closeDoor() {
+	
+	doorOpen = false;
+}
+
 
 public void goUp() {	
 	
-	if(!doorOpen && currentFloor < numberOfFloors) {  this.currentFloor--; }
+	if(!doorOpen && currentFloor < numberOfFloors) {  this.currentFloor++; }
 				
 	}
 	
 
-
-
 public void goDown() {
 	
-	if(!doorOpen && currentFloor > 1) { this.currentFloor ++; }
+	if(!doorOpen && currentFloor > 1) { this.currentFloor--; }
 	
 }
 

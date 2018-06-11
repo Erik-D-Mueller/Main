@@ -39,7 +39,7 @@ public class Airplane {
      * @return availableFirstClassSeats
      */
     public int getAvailableFirstClassSeats() {
-        return bookedFirstClassSeats;
+        return totalFirstClassSeats - bookedFirstClassSeats;
     }
 
     /**
@@ -63,7 +63,7 @@ public class Airplane {
      * @return availableCoachSeats
      */
     public int getAvailableCoachSeats() {
-        return totalCoachSeats;
+        return totalCoachSeats - bookedCoachSeats;
     }
 
     /**
@@ -81,22 +81,40 @@ public class Airplane {
      * @return True if reservation was successful, false otherwise
      */
     public boolean Reserve(boolean firstClass, int totalNumberOfSeats) {       
-        if (firstClass) {
-           
-        	bookedFirstClassSeats += totalNumberOfSeats;
+       
+    	if (firstClass) {
             
-            if (totalNumberOfSeats > getAvailableFirstClassSeats()) {
-                return false;
+            if (totalNumberOfSeats <= getAvailableFirstClassSeats()) {
+                
+            	bookedFirstClassSeats += totalNumberOfSeats;    
+            	
+            	return true;
             }
-        }
         
-        else {
-            bookedCoachSeats += totalNumberOfSeats;
-            if (totalNumberOfSeats > getAvailableCoachSeats()) {
-                return false;
+    	return false;
+    	}
+        
+    	
+    	else {
+          
+            if (totalNumberOfSeats <= getAvailableCoachSeats()) {
+                
+            	bookedCoachSeats += totalNumberOfSeats;	
+            	return true;
+            	
             }
-        }
-        return true;
-    }
+    	
+    	return false;
+    	
+    	
+    	}
 
+
+    
+    
+    
+    }
+    
+    
+    
 }

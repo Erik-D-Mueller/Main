@@ -17,6 +17,8 @@ public class SmartPhone {
     {
         this.phoneNumber = phoneNumber;
         this.carrier = carrier;
+        batteryCharge = 100;
+    
     }
 
     /**
@@ -75,15 +77,20 @@ public class SmartPhone {
      */
     public boolean Call(String phoneNumberToCall, int numberOfMinutesToTalk)
     {                        
-        onCall = true;
+        
+    	if(numberOfMinutesToTalk>=batteryCharge) {
+    		onCall = true;
         batteryCharge -= numberOfMinutesToTalk;
+    	return true;
+    	}
 
-        return true;
+        return false;
     }
 
     /**
      * Answer the phone. OnCall will be set to true. Battery juice is free when you answer the phone 
      */
+    
     public void AnswerPhone()
     {
         onCall = true;
@@ -94,7 +101,7 @@ public class SmartPhone {
      */
     public void HangUp()
     {
-        onCall = !onCall;
+        onCall = false;
     }
 
     /**
@@ -102,7 +109,7 @@ public class SmartPhone {
      */
     public void RechargeBattery()
     {
-        batteryCharge = 95;
+        batteryCharge = 100;
     }
 
 }

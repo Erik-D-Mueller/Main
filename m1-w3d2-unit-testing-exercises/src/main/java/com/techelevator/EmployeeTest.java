@@ -28,12 +28,7 @@ public class EmployeeTest {
 		Assert.assertEquals("raise salary by 10%, 100k to 110k: ", 110000, robert.getAnnualSalary(), .001);
 		
 	}
-	
-	
-	
-	
-	
-	
+
 	
 	
 	}
