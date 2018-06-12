@@ -7,7 +7,7 @@ import org.junit.Test;
 
 import junit.framework.Assert;
 
-public class AirplaneTest {
+public class AirPlaneTest {
 
 int	coachSeats = 30;
 int firstClassSeats = 40;
@@ -53,16 +53,6 @@ int firstClassSeats = 40;
 		Assert.assertEquals("Should be zero first class seats still available", 0, zippy.getAvailableFirstClassSeats());
 	
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 
 }
