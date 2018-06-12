@@ -11,13 +11,7 @@ public class KataPotter {
 	 *  5 unique books, 25%	 discount on those 5
 	 *  
 	 */
-	
-	boolean book1;   // Do they have atleast one copy of that book
-	boolean book2;  // Do they have atleast one copy of that book
-	boolean book3;  // Do they have atleast one copy of that book
-	boolean book4;  // Do they have atleast one copy of that book
-	boolean book5;   // Do they have atleast one copy of that book
-	
+		
 	static int numberOfUniqueBooks=0;
 	
 	static int totalBooks=0;
