@@ -1,2 +1,4 @@
 What color is the sky?|yellow|blue*|green|red
 A skeleton walks into a bar, and says to the bartender, "Give me a beer and a ..."|hair brush|dry erase marker|mop*|yo-yo
+What color is mud?|green|yellow|Brown*|teal
+What company makes Windows?|Apple|Tesla|Panasonic|Microsoft*
