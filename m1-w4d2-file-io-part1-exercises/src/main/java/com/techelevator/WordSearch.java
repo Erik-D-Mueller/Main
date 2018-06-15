@@ -3,7 +3,7 @@ package com.techelevator;
 
 /*
  * The way this program works is that it reads in the file name from the console, sucks in the file one line at a time, then there is a dot-substring iterator which
- * is the width of the length of the search word and it moves from left to right through the line searching if that little chunk of letters happens to match
+ * is the character-width of the the search word and it moves from left to right through the line searching if that little combination of letters happens to match
  * the search word.  If it matches then it prints that line to the screen and moves on to loading the next line.
  * 
  * The one weakness of this is that it will not find a word spread across two lines, like:
@@ -34,8 +34,7 @@ public class WordSearch {
 		int lengthOfSearchWord = searchWord.length();
 		
 		
-		Scanner fileScanner = new Scanner(inputFile);  // This opens the channel to the file
-			
+		Scanner fileScanner = new Scanner(inputFile);  // This opens the channel to the file	
 			
 			while(fileScanner.hasNextLine()) {  // this loop runs once for each line in the file
 				
