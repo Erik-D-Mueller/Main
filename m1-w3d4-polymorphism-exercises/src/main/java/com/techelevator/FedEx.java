@@ -6,18 +6,15 @@ public class FedEx implements DeliveryDriver {
 	double packageDistance;
 	double rate;
 	
-	public FedEx(double packageWeight, double packageDistance) {   // This constructor requires that we send the info package weight and packaae distance.
+	public FedEx() {   // This constructor requires that we send the info package weight and packaae distance.
 		
 		rate = 20.0;
-		this.packageWeight = packageWeight;
-		this.packageDistance = packageDistance;
-		
 		
 	}
 	
 	
 	@Override
-	public Double calculateRate() {
+	public Double calculateRate(int packageWeight, double packageDistance) {
 		
 	//rate starts out at $20 the baseamount for fed-ex
 		
@@ -33,7 +30,7 @@ public class FedEx implements DeliveryDriver {
 	@Override
 	public String nameOfQuote() {
 		
-		return "FedEx			";
+		return "FedEx		   	      ";
 
 	}
 
