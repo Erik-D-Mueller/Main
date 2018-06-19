@@ -27,7 +27,7 @@ select name, population from city where countrycode='CHN' and population > 10000
 -- 11. The name and region of all countries in North or South America (51 rows)
 select name, region from country where continent in ('North America', 'South America')
 -- 12. The name, continent, and head of state of all countries whose form of government is a monarchy (43 rows)
-?????????  select name, continent, headofstate from country where governmentform like ('Monarchy%')
+select name, continent, headofstate from country where governmentform like ('%Monarchy%')
 -- 13. The name of all cities in the USA with a population between 1 million and 2 million people (6 rows) 
 select name from city where countrycode = 'USA' and population > 1000000 and population < 2000000
 -- 14. The name and region of all countries in North or South America except for countries in the Caribbean (27 rows)
@@ -43,10 +43,10 @@ select name, lifeexpectancy from country where continent = 'Oceania' and lifeexp
 -- 19. The name of all countries on the continent of Oceania for which an average life expectancy has not been provided (i.e. equal to null) (8 rows)
 select name from country where continent = 'Oceania' and lifeexpectancy is null
 -- 20. The name, continent, GNP, and average life expectancy of all countries that have an average life expectancy of at least 70 years and a GNP between $1 million and $100 million dollars (3 rows)
-??????????  select name, continent, gnp, lifeexpectancy from country where lifeexpectancy >= 70 and gnp >1000000 and gnp < 100000000
+select name, continent, gnp, lifeexpectancy from country where lifeexpectancy >= 70 and gnp >1000000 and gnp < 100000000
 -- 21. The per capita GNP (i.e. GNP divided by population) in US Dollars of all countries in Europe (46 rows)
 select gnp/population from country where continent = 'Europe'
 -- 22. The number of years since independence for all countries that have a year of independence (192 rows)
-select name, continent, headofstate from country where governmentform like ('%Monarchy%')
+select (2018-indepyear) as numberOfYearsSinceIndependence from country where indepyear is not null
 
 // The wild character % seems to only work with like, it doesn't seem to work with =, even through words without wild characters do.
