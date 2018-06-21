@@ -126,6 +126,14 @@ limit 10
 -- 15. The store ID, street address, total number of rentals, total amount of sales (i.e. payments), and average sale of each store 
 -- (Store 1 has 7928 total rentals and Store 2 has 8121 total rentals)
 
+select store.store_id, address.address, count(rental.inventory_id), sum(payment.amount), avg(payment.amount)
+from store
+join address on store.address_id = address.address_id
+join inventory on inventory.store_id = store.store_id
+join rental on rental.inventory_id = inventory.inventory_id
+join payment on payment.rental_id = rental.rental_id
+
+group by store.store_id, address.address;
 
 
 -- 16. The top ten film titles by number of rentals
@@ -136,7 +144,7 @@ join inventory on inventory.film_id = film.film_id
 join rental on rental.inventory_id = inventory.inventory_id
 group by film.title
 order by count(rental.inventory_id) desc
-limit 10
+limit 10;
 -- 17. The top five film categories by number of rentals 
 -- (#1 should be “Sports” with 1179 rentals and #5 should be “Family” with 1096 rentals)
 select category.name, count(category.category_id)
@@ -148,7 +156,7 @@ join inventory on inventory.film_id = film.film_id
 join rental on rental.inventory_id = inventory.inventory_id
 
 group by category.name
-order by count(category.category_id) desc
+order by count(category.category_id) desc;
 -- 18. The top five Action film titles by number of rentals 
 -- (#1 should have 30 rentals and #5 should have 28 rentals)
 select film.title, count(rental.inventory_id)
@@ -162,7 +170,7 @@ where category.name like ('Action')
 group by film.title
 
 order by count(rental.inventory_id) desc
-limit 5
+limit 5;
 -- 19. The top 10 actors ranked by number of rentals of films starring that actor 
 -- (#1 should be “GINA DEGENERES” with 753 rentals and #10 should be “SEAN GUINESS” with 599 rentals)
 select actor.first_name, actor.last_name, count(rental.inventory_id)
@@ -174,7 +182,7 @@ join rental on rental.inventory_id = inventory.inventory_id
 group by actor.last_name, actor.first_name
 
 order by count(rental.inventory_id) desc
-limit 10
+limit 10;
 
 -- 20. The top 5 “Comedy” actors ranked by number of rentals of films in the “Comedy” category starring that actor 
 -- (#1 should have 87 rentals and #5 should have 72 rentals)
