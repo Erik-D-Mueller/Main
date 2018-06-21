@@ -4,14 +4,13 @@ public class Tank implements Vehicle {    //No constructor needed, no values are
 
 	private double distanceTravelled;
 	
-	public Tank(double distanceTravelled) {
+	public Tank() {
 		
-		this.distanceTravelled = distanceTravelled;
 		
 	}
 	
 	@Override
-	public double calculateToll() {          //Tanks travel for free, so we always return zero
+	public double calculateToll(double distanceTravelled) {          //Tanks travel for free, so we always return zero
 	 
 		return 0;
 	}

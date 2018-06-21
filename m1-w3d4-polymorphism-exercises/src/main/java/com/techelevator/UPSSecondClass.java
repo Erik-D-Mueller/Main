@@ -6,7 +6,7 @@ public class UPSSecondClass implements DeliveryDriver {
 	
 	public Double calculateRate(int packageWeight, double packageDistance) {
 	
-		return (packageWeight/16) * packageDistance * 0.050;
+		return (packageWeight/16.0) * packageDistance * 0.050;
 	
 	}
 

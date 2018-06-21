@@ -6,15 +6,14 @@ public class Truck implements Vehicle {
 	double rate; // The rate per mile is set later, based upon number of axles
 	double distanceTravelled;
 	
-public Truck(int numberOfAxles, double distanceTravelled) {
+public Truck(int numberOfAxles) {
 	
 	this.numberOfAxles = numberOfAxles;
-	this.distanceTravelled = distanceTravelled;
 	
 }
 	
 	@Override
-	public double calculateToll() {
+	public double calculateToll(double distanceTravelled) {
 		
 		if(numberOfAxles==4) {rate=0.040;}    // This sets the rate based upon how many axles the truck has
 		if(numberOfAxles==6) {rate=0.045;}

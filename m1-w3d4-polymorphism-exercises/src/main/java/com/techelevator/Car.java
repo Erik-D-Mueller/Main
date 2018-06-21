@@ -13,7 +13,7 @@ public class Car implements Vehicle {
 			
 		
 	@Override
-	public double calculateToll(int distanceTravelled) {
+	public double calculateToll(double distanceTravelled) {
 			
 			
 	if(hasTrailer) { return (1 + distanceTravelled*00.020); }  //If the car has a trailer then the toll is $1 more expensive 
@@ -39,6 +39,12 @@ public class Car implements Vehicle {
 	public String getTypeOfVehicle() {
 		
 		return "Car";
+	}
+
+	@Override
+	public double getDistanceTravelled() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 	
 	
