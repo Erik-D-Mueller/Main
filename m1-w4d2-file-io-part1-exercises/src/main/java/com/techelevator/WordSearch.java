@@ -27,33 +27,50 @@ public class WordSearch {
 		
 		File inputFile = getInputFileFromUser();   // Call method to get file name
 		
+		boolean caseSensitiveSearch = shouldBeCaseSensitive();
+		
 		String searchWord = getSearchWord();	// Call method to get search word
 		
 		boolean wordHasBeenFound = false;  // This is a flag used later on
 	
 		int lengthOfSearchWord = searchWord.length();
-		
-		
+
 		Scanner fileScanner = new Scanner(inputFile);  // This opens the channel to the file	
-			
-			while(fileScanner.hasNextLine()) {  // this loop runs once for each line in the file
+		
+		if(caseSensitiveSearch) { searchWord=searchWord.toLowerCase();}   // make everything lowercase including the searchword if they want a case insensitive search
+		
+		while(fileScanner.hasNextLine()) {  // this loop runs once for each line in the file
 				
 				String line = fileScanner.nextLine();
 				
 				lineNumberCounter++;
 				
-				
-				for( int i=0; i + lengthOfSearchWord <= line.length()  &&  !wordHasBeenFound; i++) {  
+				for( int i=0; i + lengthOfSearchWord <= line.length()  &&  !wordHasBeenFound; i++) {    //This loops multiple times for each line
 						
+										
+					if(caseSensitiveSearch) {
 					
-					if(		line.substring(i, i+lengthOfSearchWord).contains(searchWord)		) {
+					if(	line.substring(i, i+lengthOfSearchWord).contains(searchWord)		) {
 						
 						wordHasBeenFound = true;
 						
 						System.out.println(lineNumberCounter + ") " + line);   // The wordHasBeenFound flag prevents the same line from getting printed twice, if the word occurs twice on that line
+					
+					}
+					}
+					
+					if(!caseSensitiveSearch) {
+						
+						if(	line.substring(i, i+lengthOfSearchWord).toLowerCase().contains(searchWord)		) {
+							
+							wordHasBeenFound = true;
+							
+							System.out.println(lineNumberCounter + ") " + line);   // The wordHasBeenFound flag prevents the same line from getting printed twice, if the word occurs twice on that line
+						
+						}
 						
 					}
-						
+	
 				
 				}
 				
@@ -85,12 +102,22 @@ public class WordSearch {
 	//  The below method is for obtaining the search word
 	private static String getSearchWord() {             
 		Scanner userInput = new Scanner(System.in);
-		System.out.print("Please enter the word to search for, case sensitive: ");
+		System.out.print("Please enter the word to search for:");
 		String searchWord = userInput.nextLine();	
 		return searchWord;
 		
 	}
 
+	private static boolean shouldBeCaseSensitive(){
+		
+		Scanner userInput = new Scanner(System.in);
+		System.out.print("Should the search be case sensitive?  (Y)es (N)o ");
+		String caseSensitive = userInput.nextLine();
+		
+		return caseSensitive.contains("Y");
+			
+	}
+	
 
 }
 

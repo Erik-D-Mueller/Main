@@ -34,23 +34,23 @@ Scanner userInput = new Scanner(System.in);
 		
 		System.out.println("Is the temperature in (c)elsius or (f)arhenheit?");
 		
-		String unit = userInput.nextLine();
+		String unit = userInput.nextLine();  // unit is what they entered for celsius or farhenheit
 		
-		int temp = (int) (Integer.parseInt(tempString));
+		int temp = (int) (Integer.parseInt(tempString));   // temp is the number that they entered
 		
 		if(unit.equals("c")) {
 			
-			int tc = (int) ((temp - 32)/1.8);
+			int tf =  (int) ((temp*1.8)+32);
 			
-			System.out.print(temp + "c is " + tc + "f");
+			System.out.print(temp + "c is " + tf + "f");
 	
 		}
 		
 		if(unit.equals("f")) {
 			
-			int tf = (int) ((temp*1.8)+32);
+			int tc = (int) ((temp+32)/1.8);
 			
-			System.out.print(temp + "f is " + tf + "c");
+			System.out.print(temp + "f is " + tc + "c");
 	
 		}
 	
