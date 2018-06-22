@@ -8,7 +8,7 @@ import java.text.DecimalFormat;
 
 /*
  * Weight is accepted in pounds and ounces in MainShipping, but it is converted to
- * ounces which stays the defulat for the rest of the program.
+ * ounces which stays the default for the rest of the program.
  * 
  * In this scenario, an object of FedEx or UPS or PostalService sort of represents their quote, for how
  * much they would charge to ship that particular package with its weight, distance and class level required.
@@ -23,7 +23,6 @@ public class MainShipping {
 		int packageWeightInOunces;
 		Scanner keyboardInput = new Scanner(System.in);
 		
-		
 		// This prompts for and returns the weight in ounces
 		packageWeightInOunces = getPackageWeight(keyboardInput);
 		
@@ -34,7 +33,6 @@ public class MainShipping {
 		printQuotes(packageWeightInOunces, packageDistanceInMiles);	
 	
 	}
-
 	
 	private static int getPackageWeight(Scanner keyboardInput){
 		
@@ -58,7 +56,6 @@ public class MainShipping {
 		return (int)packageWeight;		
 	}
 	
-	
 	private static double getPackageDistance(Scanner keyboardInput){
 		String inputedInfo;
 		System.out.println("Please enter the distance that the package will be traveling in miles: ");
@@ -66,52 +63,56 @@ public class MainShipping {
 		return Double.parseDouble(inputedInfo);
 	}
 	
-	
 	private static void printQuotes(int packageWeightInOunces, double packageDistanceInMiles){
+		
+		ArrayList<ShippingQuotes> myList = new ArrayList<ShippingQuotes>();
+		
+		myList.add(new PostalServiceFirstClass());
+		myList.add(new PostalServiceSecondClass());
+		myList.add(new PostalServiceThirdClass());
+		myList.add(new FedEx());
+		myList.add(new UPSFirstClass());
+		myList.add(new UPSSecondClass());
+		myList.add(new UPSThirdClass());
 		
 		System.out.println("Delivery Method               $ Cost");
 		System.out.println("-----------------------------------------");
 		
-	
-// Make the Postal Service objects for first second and third class
-		DeliveryDriver PostalServiceFirstClass = new PostalServiceFirstClass();
-		DeliveryDriver PostalServiceSecondClass = new PostalServiceSecondClass();
-		DeliveryDriver PostalServiceThirdClass = new PostalServiceThirdClass();
-				
-		// Call the calculateRate() and getName() methods on the postal service objects and display the results
-		System.out.println(PostalServiceFirstClass.nameOfQuote() + PostalServiceFirstClass.calculateRate(packageWeightInOunces, packageDistanceInMiles));
-		System.out.println(PostalServiceSecondClass.nameOfQuote() + PostalServiceSecondClass.calculateRate(packageWeightInOunces, packageDistanceInMiles));
-		System.out.println(PostalServiceThirdClass.nameOfQuote() + PostalServiceThirdClass.calculateRate(packageWeightInOunces, packageDistanceInMiles));
-
-		// Make the fedex Object
-		DeliveryDriver FedEx = new FedEx();
-				
-		// Call the calculaterate() and getname() methods and display results
-		System.out.println(FedEx.nameOfQuote() +  FedEx.calculateRate(packageWeightInOunces, packageDistanceInMiles));
-						
-		// Make the UPS Objects for first second and third class
-		DeliveryDriver UPSFirstClass = new UPSFirstClass();
-		DeliveryDriver UPSSecondClass = new UPSSecondClass();
-		DeliveryDriver UPSThirdClass = new UPSThirdClass();
+for( ShippingQuotes qt: myList) {
+		System.out.println(qt.nameOfQuote() + qt.calculateRate(packageWeightInOunces, packageDistanceInMiles));
+		}
 		
-		// Call and display the UPS calculateRate and getName method on those objects
-		System.out.println(UPSFirstClass.nameOfQuote() + UPSFirstClass.calculateRate(packageWeightInOunces, packageDistanceInMiles));
-		System.out.println(UPSSecondClass.nameOfQuote() + UPSSecondClass.calculateRate(packageWeightInOunces, packageDistanceInMiles));
-		System.out.println(UPSThirdClass.nameOfQuote() + UPSThirdClass.calculateRate(packageWeightInOunces, packageDistanceInMiles));
+// I used the above polymorphism to replace all the code below
 		
-				
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+//		
+//		
+//// Make the Postal Service objects for first second and third class
+//		DeliveryDriver PostalServiceFirstClass = new PostalServiceFirstClass();
+//		DeliveryDriver PostalServiceSecondClass = new PostalServiceSecondClass();
+//		DeliveryDriver PostalServiceThirdClass = new PostalServiceThirdClass();
+//					
+//		// Call the calculateRate() and getName() methods on the postal service objects and display the results
+//		System.out.println(PostalServiceFirstClass.nameOfQuote() + PostalServiceFirstClass.calculateRate(packageWeightInOunces, packageDistanceInMiles));
+//		System.out.println(PostalServiceSecondClass.nameOfQuote() + PostalServiceSecondClass.calculateRate(packageWeightInOunces, packageDistanceInMiles));
+//		System.out.println(PostalServiceThirdClass.nameOfQuote() + PostalServiceThirdClass.calculateRate(packageWeightInOunces, packageDistanceInMiles));
+//
+//		// Make the fedex Object
+//		DeliveryDriver FedEx = new FedEx();
+//				
+//		// Call the calculaterate() and getname() methods and display results
+//		System.out.println(FedEx.nameOfQuote() +  FedEx.calculateRate(packageWeightInOunces, packageDistanceInMiles));
+//						
+//		// Make the UPS Objects for first second and third class
+//		DeliveryDriver UPSFirstClass = new UPSFirstClass();
+//		DeliveryDriver UPSSecondClass = new UPSSecondClass();
+//		DeliveryDriver UPSThirdClass = new UPSThirdClass();
+//		
+//		// Call and display the UPS calculateRate and getName method on those objects
+//		System.out.println(UPSFirstClass.nameOfQuote() + UPSFirstClass.calculateRate(packageWeightInOunces, packageDistanceInMiles));
+//		System.out.println(UPSSecondClass.nameOfQuote() + UPSSecondClass.calculateRate(packageWeightInOunces, packageDistanceInMiles));
+//		System.out.println(UPSThirdClass.nameOfQuote() + UPSThirdClass.calculateRate(packageWeightInOunces, packageDistanceInMiles));
+//		
+//					
 		
 	}
 	

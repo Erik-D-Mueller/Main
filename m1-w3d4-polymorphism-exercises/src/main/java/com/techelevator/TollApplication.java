@@ -9,25 +9,19 @@ public class TollApplication {
 		
 		Double sumMiles = 0.0;
 		Double totalRevenue = 0.0;
-		
-		Vehicle car1 = new Car(true);     // We're going to act like its a "Vehicle" and interact with it like that, even though it's actually a car
-		Vehicle car2 = new Car(false);    // We're going to act like its a "Vehicle" and interact with it like that, even though it's actually a car
-		Vehicle truck1 = new Truck(6);    // We're going to act like its a "Vehicle" and interact with it like that, even though it's actually a truck
-		Vehicle truck2 = new Truck(10);   // We're going to act like its a "Vehicle" and interact with it like that, even though it's actually a truck
-		Vehicle tank1 = new Tank();       // We're going to act like its a "Vehicle" and interact with it like that, even though it's actually a truck
-		
+				
 		List<Vehicle> vehicleList1 = new ArrayList<Vehicle>();
 		
-		vehicleList1.add(car1);           // Here I am adding all of the "Vehicles types" to the list vehicleList1
-		vehicleList1.add(car2);
-		vehicleList1.add(truck1);
-		vehicleList1.add(truck2);
-		vehicleList1.add(tank1);
-				
+		for(int x=0; x<5; x++) {
+		vehicleList1.add(new Car(true));           // Here I am adding all of the "Vehicles types" to the list vehicleList1
+		}
+		
+		vehicleList1.add(new Truck(4));
+		vehicleList1.add(new Truck(6));    
+		vehicleList1.add(new Truck(15));    
 		
 		System.out.println("Vehicle \t Distance Travelled \t Toll $");
 		System.out.println("------------------------------------------------------------");
-		
 	
 		double randomDistance;
 		

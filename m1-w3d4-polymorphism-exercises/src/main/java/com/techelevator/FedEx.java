@@ -1,6 +1,6 @@
 package com.techelevator;
 
-public class FedEx implements DeliveryDriver {
+public class FedEx extends ShippingQuotes implements DeliveryDriver {
 
 	double packageWeight;
 	double packageDistance;

@@ -1,6 +1,6 @@
 package com.techelevator;
 
-public class PostalServiceFirstClass implements DeliveryDriver {
+public class PostalServiceFirstClass extends ShippingQuotes implements DeliveryDriver {
 
 	
 

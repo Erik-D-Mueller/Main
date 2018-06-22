@@ -1,6 +1,6 @@
 package com.techelevator;
 
-public class PostalServiceThirdClass implements DeliveryDriver {
+public class PostalServiceThirdClass extends ShippingQuotes implements DeliveryDriver {
 
 	@Override
 	public Double calculateRate(int packageWeight, double packageDistance) {

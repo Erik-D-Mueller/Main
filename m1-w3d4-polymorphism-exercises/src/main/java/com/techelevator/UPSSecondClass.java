@@ -1,6 +1,6 @@
 package com.techelevator;
 
-public class UPSSecondClass implements DeliveryDriver {
+public class UPSSecondClass extends ShippingQuotes implements DeliveryDriver {
 
 	@Override
 	
