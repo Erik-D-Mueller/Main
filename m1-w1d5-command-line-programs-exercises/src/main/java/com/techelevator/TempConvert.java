@@ -48,7 +48,7 @@ Scanner userInput = new Scanner(System.in);
 		
 		if(unit.equals("f")) {
 			
-			int tc = (int) ((temp+32)/1.8);
+			int tc = (int) ((temp-32)/1.8);
 			
 			System.out.print(temp + "f is " + tc + "c");
 	
