@@ -115,21 +115,14 @@ public class Exercises {
 	 */
 	public Map<String, Integer> robPeterToPayPaul(Map<String, Integer> peterPaul) {
 		
-		
-		//System.out.println("Peter has " + peterPaul.get("Peter") );
-		//System.out.println("Paul has " + peterPaul.get("Paul") );
-		
-		if(peterPaul.get("Peter") > 0 && peterPaul.get("Paul") < 1000)
+		if(peterPaul.get("Peter") > 0 && peterPaul.get("Paul") < 1000) // If peter has more than zero an paul has less than 10 dollars
 		
 				{  
 					peterPaul.put("Paul", peterPaul.get("Paul") + peterPaul.get("Peter")/2 );  // Paul gets Pauls money plus the equivalent of half of peters money
 				
-					peterPaul.put("Peter", peterPaul.get("Peter")/2 );  // Peter only gets to keep half of his money
+					peterPaul.put("Peter", (int) Math.ceil(peterPaul.get("Peter")/2.0) );  // Peter only gets to keep half of his money
 	
 				}
-		
-		//System.out.println("Peter has " + peterPaul.get("Peter") );
-		//System.out.println("Paul has " + peterPaul.get("Paul") );
 		
 		return peterPaul;
 		
@@ -311,9 +304,25 @@ public class Exercises {
 	 * last2Revisited(["hixxhi", "xaxxaxaxx", "axxxaaxx"]) → {"hixxhi": 1, "xaxxaxaxx": 1, "axxxaaxx": 2}
 	 * 
 	 */
+	
 	public Map<String, Integer> last2Revisted(String[] words) {
+				
+		String searchWord;
+		Map<String,Integer> myMap = new HashMap<String,Integer>();
 		
-		return null;
+		for(String temp: words) {
+			
+		searchWord = temp.substring(temp.length()-2, temp.length());
+		
+		int counter = 0;
+		for(int x = 0; x < temp.length()-2; x++) {
+			
+			if(temp.substring(x,x+2).contains(searchWord)){ counter++;}
+			
+		}
+			myMap.put(temp, counter);			
+		}
+		return myMap;
 	}
 
 	/*

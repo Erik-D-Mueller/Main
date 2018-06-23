@@ -12,6 +12,17 @@ public Elevator(int totalNumberOfFloors) {
 	
 }
 
+public void goUp(int desiredFloor) {	
+	
+	if(!doorOpen && currentFloor < desiredFloor && desiredFloor <= numberOfFloors) {  currentFloor=desiredFloor; }
+				
+	}
+
+public void goDown(int desiredFloor) {
+	
+	if(!doorOpen && currentFloor > desiredFloor && desiredFloor>=1) { currentFloor=desiredFloor; }
+	
+}
 
 public int getCurrentFloor() {
 	
@@ -19,14 +30,11 @@ public int getCurrentFloor() {
 		
 }
 
-
 public int getNumberOfFloors() {
 	
 	return this.numberOfFloors;
 	
 }
-
-
 
 public boolean isDoorOpen() {
 	
@@ -44,20 +52,5 @@ public void closeDoor() {
 	
 	doorOpen = false;
 }
-
-
-public void goUp() {	
-	
-	if(!doorOpen && currentFloor < numberOfFloors) {  this.currentFloor++; }
-				
-	}
-	
-
-public void goDown() {
-	
-	if(!doorOpen && currentFloor > 1) { this.currentFloor--; }
-	
-}
-
 
 }
