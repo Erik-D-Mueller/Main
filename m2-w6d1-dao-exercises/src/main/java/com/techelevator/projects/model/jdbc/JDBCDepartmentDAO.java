@@ -15,7 +15,7 @@ import com.techelevator.projects.model.DepartmentDAO;
 
 public class JDBCDepartmentDAO implements DepartmentDAO {
 	
-	private JdbcTemplate jdbcTemplate;
+	private JdbcTemplate jdbcTemplate;   // What does this line do?
 
 	public JDBCDepartmentDAO(DataSource dataSource) {
 		this.jdbcTemplate = new JdbcTemplate(dataSource);
@@ -61,7 +61,6 @@ public class JDBCDepartmentDAO implements DepartmentDAO {
 	public List<Department> searchDepartmentsByName(String nameSearch) {
 
 		ArrayList<Department> depts = new ArrayList<Department>();
-
 		
 		// This is my workaround, I tried putting the percent signs in the sql string directly and it kept crashing the program
 		nameSearch = "%" + nameSearch + "%";
@@ -85,6 +84,9 @@ while(results.next()) {
 	 * @param updatedDepartment the department object to update
 	 */
 
+	
+	// saveDepartment is really 'updateDepartment'
+	// saveDepartment changes the name
 	@Override
 	public void saveDepartment(Department updatedDepartment) {
 
@@ -148,14 +150,12 @@ while(results.next()) {
 	}
 	
 	private Department makeDeptObject(SqlRowSet results) {
-		
 
 		Department theDept = new Department();
 
 		theDept.setId((long) results.getInt("department_id"));
 		
 		theDept.setName(results.getString("name"));
-
 		
 		return theDept;
 	}
