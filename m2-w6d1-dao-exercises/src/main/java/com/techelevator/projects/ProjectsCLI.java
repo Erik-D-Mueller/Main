@@ -71,6 +71,7 @@ public class ProjectsCLI {
 		application.run();
 	}
 	
+	
 	public ProjectsCLI() {
 		this.menu = new Menu(System.in, System.out);
 		
@@ -84,11 +85,14 @@ public class ProjectsCLI {
 		projectDAO = new JDBCProjectDAO(dataSource);
 	}
 
+	
 	private void run() {
 		displayApplicationBanner();	
 		while(true) {
 			printHeading("Main Menu");
+			
 			String choice = (String)menu.getChoiceFromOptions(MAIN_MENU_OPTIONS);
+			
 			if(choice.equals(MAIN_MENU_OPTION_DEPARTMENTS)) {
 				handleDepartments();
 			} else if(choice.equals(MAIN_MENU_OPTION_EMPLOYEES)) {

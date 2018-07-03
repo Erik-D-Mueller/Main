@@ -1,5 +1,7 @@
 package com.techelevator.department;
 
+import java.sql.ResultSet;
+
 import static org.junit.Assert.assertEquals;
 
 import static org.junit.Assert.assertNotEquals;
@@ -24,6 +26,7 @@ import org.springframework.jdbc.datasource.SingleConnectionDataSource;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 
 import com.techelevator.projects.model.Department;
+import com.techelevator.projects.model.Employee;
 import com.techelevator.projects.model.Project;
 import com.techelevator.projects.model.ProjectDAO;
 import com.techelevator.projects.model.jdbc.JDBCDepartmentDAO;
@@ -38,10 +41,6 @@ public class JDBCProjectDAOIntegrationTest implements ProjectDAO{
 
 	private JdbcTemplate jdbcTemplate;
 	
-	public void JDBCProjectDAO(DataSource dataSource) {
-		this.jdbcTemplate = new JdbcTemplate(dataSource);
-	}
-	
 	/* Using this particular implementation of DataSource so that
 	 * every database interaction is part of the same database
 	 * session and hence the same database transaction */
@@ -54,7 +53,7 @@ public class JDBCProjectDAOIntegrationTest implements ProjectDAO{
 		dataSource = new SingleConnectionDataSource();
 		dataSource.setUrl("jdbc:postgresql://localhost:5432/daoPractice");
 		dataSource.setUsername("postgres");
-		dataSource.setPassword("postgres1");
+
 		/* The following line disables autocommit for connections 
 		 * returned by this DataSource. This allows us to rollback
 		 * any changes after each test */
@@ -70,6 +69,7 @@ public class JDBCProjectDAOIntegrationTest implements ProjectDAO{
 		@Before
 		public void setup() {
 			dao = new JDBCProjectDAO(dataSource);
+			jdbcTemplate = new JdbcTemplate(dataSource);
 		
 		}
 
@@ -82,49 +82,57 @@ public class JDBCProjectDAOIntegrationTest implements ProjectDAO{
 		}
 
 		
+	
+		
 	@Test
 	public void testingGetAllActiveProjects() {
 	
 // Insert an active project
 		
 		long longVar = 0;
-		String name = "Test Project";
+		String projectName = "Test Project";
+		
 		LocalDate startDate = LocalDate.of(2010,04,05);
 		LocalDate endDate = LocalDate.of(2030, 02, 03);
-			
-		System.out.println("Test");
 		
-		Project projectObject1 = new Project();
+		String name1 = "Test Project Object1";
+		String name2 = "Test Project Object2";
+		String name3 = "Test Project Object3";
+		String name4 = "Test Project Object4";
+				
 		
-		projectObject1 = createProjectObject(longVar, name, startDate, endDate);
+		// Create four project objects, three of which are current
+		Project projectObject1 = createProjectObject(longVar, name1, startDate, endDate);		
+		Project projectObject2 = createProjectObject(longVar, name2, startDate, null);
+		Project projectObject3 = createProjectObject(longVar, name3, LocalDate.of(2030, 02, 03), endDate);
+		Project projectObject4 = createProjectObject(longVar, name4, startDate, null);
 		
-		//String sqlRemoveProject = "DELETE FROM project WHERE NAME LIKE (?)";
-		String sqlInsertProject = "insert into project (name) values (?)";
+		List<Project> initialActiveProjectsList = new ArrayList<Project>();
+		List<Project> finalActiveProjectsList = new ArrayList<Project>();
 		
-		System.out.println("Test2");
+		// Delete if it already exists.  Doesn't hurt if it doesn't.
+		String sqlRemoveProjects = "DELETE FROM project WHERE NAME LIKE ? or name like ? or name like ? or name like ?";
 		
-		// Remove any project with that name if it exists
+		// INSERT INTO project (name, from_date, to_date) VALUES ('Royal Shakespeare 1', '2015-10-15', '2016-03-14');
 		
+		// Remove projects with the test-names of what we are about to create, if they happen to exist
+		jdbcTemplate.update(sqlRemoveProjects, projectObject1.getName(), projectObject2.getName(), projectObject3.getName(), projectObject4.getName());
 		
-		//jdbcTemplate.update(sqlRemoveProject, "yellow");
+		// measure number of active projects before
+		initialActiveProjectsList = dao.getAllActiveProjects();
 		
+		// insert three active projects, one inactive
+		String sqlInsertProject = "insert into project (name, from_date, to_date) values (?, ?, ?)";		
+		jdbcTemplate.update(sqlInsertProject, projectObject1.getName(), projectObject1.getStartDate(), projectObject1.getEndDate());
+		jdbcTemplate.update(sqlInsertProject, projectObject2.getName(), projectObject2.getStartDate(), projectObject2.getEndDate());
+		jdbcTemplate.update(sqlInsertProject, projectObject3.getName(), projectObject3.getStartDate(), projectObject3.getEndDate());
+		jdbcTemplate.update(sqlInsertProject, projectObject4.getName(), projectObject4.getStartDate(), projectObject4.getEndDate());
+
+		// Measure afterward
+		finalActiveProjectsList = dao.getAllActiveProjects();
 		
-		
-		System.out.println("Test3");
-		
-		// Insert that project
-		
-		jdbcTemplate.update(sqlInsertProject);
-		
-		System.out.println( "test4" );
-		
-		List<Project> projectsList = new ArrayList<Project>();
-		
-		projectsList = dao.getAllActiveProjects();
-		
-		System.out.println( "test4" + projectsList.size() );
-		
-		assertTrue(projectsList.size()>0);   // Confirm that atleast one result was returned
+		// confirm that there are three more active projects than before
+		assertTrue(finalActiveProjectsList.size() - initialActiveProjectsList.size() == 3);
 		
 	}
 	
@@ -134,8 +142,33 @@ public class JDBCProjectDAOIntegrationTest implements ProjectDAO{
 	
 	@Test
 	public void testRemoveEmployeeFromProject() {
+		
+		Employee testEmployee = new Employee();
+		
+		LocalDate startDate = LocalDate.of(2010,04,05);
+		LocalDate endDate = LocalDate.of(2030, 02, 03);
+		long longVar = 0;
+		
+		String name1 = "Test Project 1";
+		Project projectObject1 = createProjectObject(longVar, name1, startDate, endDate);
+				
+		jdbcTemplate.update("INSERT INTO EMPLOYEE (department_id, first_name, last_name, birth_date, gender, hire_date) values (1, 'testFirstName', 'testLastName', '1972-03-03','M', '1992-03-03')");
+				
+		String sqlGetTestEmployeeID = "select employee_id from employee where first_name = 'testFirstName' and last_name = 'testLastName'";
+		
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlGetTestEmployeeID);
+		
+		// for some reason it needs this command in order to work
+		
+		int employeeId = results.getInt("employee_id");
+		
+		
+		
 	
 		
+	//	String sqlAddEmployeeToProject = "INSERT INTO project_employee ( project_id, employee_id) values (?, ?)";
+		
+	//	jdbcTemplate.update(sqlAddEmployeeToProject, projectObject1.getId(), testEmployee.getId());
 		
 		
 	}
