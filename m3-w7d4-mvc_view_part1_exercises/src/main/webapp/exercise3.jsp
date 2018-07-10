@@ -1,5 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-ExpressionParser parser= new SpelExpressionParser();
+
 
 
 <!DOCTYPE html>
@@ -15,22 +15,38 @@ ExpressionParser parser= new SpelExpressionParser();
 	<body>
 		<h1>Exercise 3 - Echo</h1>
 		
+		
+		<c:choose>
+			<c:when test="${empty param.word }" >
+			<c:set var="word" value="venus"/>
+			</c:when>
+
+			<c:otherwise>
+				<c:set var="word" value="${param.word}" />
+			</c:otherwise>
+			
+		</c:choose>			
+		
+		<c:choose>
+			<c:when test="${empty param.count }" >
+			<c:set var="count" value="20"/>
+			</c:when>
+
+			<c:otherwise>
+				<c:set var="count" value="${param.count}" />
+			</c:otherwise>
+			
+		</c:choose>		
+		
+		
 		<ul>
 		
-		<c:set var="word" value="Word"/>
-		<c:set var="count" value="20"/>
+		<c:forEach var="number" begin="0" end="${count}">
+		<li style="font-size: ${count-number}pt;">${word}</li>
+		</c:forEach>
 		
-		<c:foreach begin="${count}" end=0 step="-1" var="font">
-		
-				
-		
-
-
-		
-		</c:foreach>
-		
-
 		</ul>
 		
 	</body>
 </html>
+		

@@ -55,4 +55,74 @@ section {
 	min-height: 450px;
 	background-color: #FFF;
 	border-radius: 7px;
+	float: center;
 }
+
+h3 {
+	
+	font-size:30px;
+	
+	
+}
+
+p {
+	
+	font-size: 20px;
+	
+	
+}
+
+
+
+.stars {
+	width: 20%;
+	
+}
+
+
+
+
+	
+	.bold {
+	
+	font-weight: bold;
+	
+	}
+	
+	.below {
+	position: block;
+	}
+	
+	.mainLoop {
+	
+	
+	float: left;
+		
+		
+}
+	
+	.mainPicture {
+	
+	position: inline;
+	float: left;
+	width: 21%;
+	
+	}
+	
+	
+	.inline {
+	position: inline;
+	}
+	
+	.notPicture {
+	
+	position: inline;
+	float: left;
+
+	}
+	
+	.price {
+	
+	color: maroon;
+	
+	}

@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class ProductController {
-
+	
 	@RequestMapping("/productList")
 	public String showProductList(HttpServletRequest request) {
 		request.setAttribute("productList", getProducts());
 		return "productList";
 	}
 	
-	@RequestMapping("/productTiles")
+	@RequestMapping({"/productTiles"})
 	public String showProductTiles(HttpServletRequest request) {
 		request.setAttribute("productList", getProducts());
 		return "productTiles";

@@ -1,0 +1,149 @@
+body {
+	width: 100%;
+	background-color: #212121;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+		sans-serif;
+}
+
+body, header, nav {
+	margin: 0px;
+}
+
+header {
+	background-color: #0099CC;
+	color: white;
+	padding: 10px 10px;
+}
+
+nav {
+	background-color: #8DC63F;
+	margin-bottom: 20px;
+	padding: 5px;
+	height: 50px;
+}
+
+nav ul {
+	float: left;
+}
+
+nav li {
+	list-style-type: none;
+	color: white;
+	margin-left: 25px;
+	margin-bottom: 10px;
+	font-size: 1.3em;
+	float: left;
+}
+
+nav li a {
+	color: white;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+nav li a:hover {
+	text-decoration: underline;
+}
+
+section {
+	clear: both;
+	display: block;
+	width: 80%;
+	margin: 20px auto;
+	vertical-align: top;
+	text-align: center;
+	min-height: 450px;
+	background-color: #FFF;
+	border-radius: 7px;
+	float: center;
+}
+
+
+
+.stars {
+	position: inline-block;
+	width: 10%;
+	padding:2px;
+}
+
+	
+	.bold {
+	
+	font-weight: bold;
+	
+	}
+	
+	
+	.below {
+	position: block;
+	}
+	
+	
+	.mainLoop {
+	
+	
+	float: left;
+		
+		
+}
+	
+	.mainPicture {
+	
+	position: inline;
+	width: 60px;
+	
+	}
+	
+	
+
+	
+
+	
+	.price {
+	
+	color: maroon;
+	
+	}
+	
+	
+	.title-table {
+	
+	background-color:orange;
+	
+	font-size: 25px;
+	float:center;
+	vertical-align:bottom;
+	
+	}
+	
+	.productTable{
+	display: inline;
+	column-width: 200px;
+	font-size: 20px;
+	}
+	
+	#pictureHolder{
+	height:100px;
+	}
+	
+	#bestSellerHolder{
+	height:30px;
+	}
+	
+	.width{
+	
+	width: 150px;
+	
+	}
+	
+	.productTablesDiv{
+	background-color:blue;
+
+	
+	}
+	
+	
+	titleDiv{
+	
+	
+	}

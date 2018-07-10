@@ -21,7 +21,7 @@
 		<li>0</li>
 		<li>1</li>
 		
-		<c:forEach begin="0" end="25" step="1" var="counter">
+		<c:forEach begin="0" end="24" step="1" var="counter">
 		
 		<c:set var="output" value="${previousNumber + previousPreviousNumber}"/>
 		
