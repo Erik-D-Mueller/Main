@@ -59,79 +59,107 @@ section {
 }
 
 h3 {
-	font-size: 30px;
-}
-
-hr {
-	height: 4px;
-}
-
-
-
-#mainDiv {
-	background-color: orange;
-	text-align:left;
-
-}
-#mainPicture{
-	width: 150px;
-}
-
-
-#imageDiv {
 	
-	background-color:pink;
-	display:inline-block;
-	float: left;
-	margin-left: 40px;
-	margin-right:40px;
+	font-size:30px;
+	
 	
 }
 
-#detailsDiv {
-	background-color: tan;
-	display:inline-block;
-	width:40%;
+
+	p{
+	text-align: left;
+	font-size: 20px;
+	
+	
 }
 
 
 
-#title {
-	background-color: pink;
-	text-align: left;
-	display:block;
-}
 
-#bestSeller {
-	background-color: green;
-	text-align: left;
+
+
+
+
+	
+	.bold {
+	
 	font-weight: bold;
-	display:block;
-}
+	
+	}
+	
+/*	
+	.below {
+	display: block;
+	}
+	*/
+	
+	#mainPicture {
+	
+	
+	float: left;
+	width: 21%;
 
-#manufacturer {
+	}
+	
+	
+
+/*	
+	.notPicture {
+	display: block;
+	background-color: orange;
+	
+	
+	}
+	
+*/	
+	
+	hr{
+	height:4px;
+	}
+	
+	#title{
+	background-color:pink;
+	
+	text-align:left;
+	
+
+	}
+	
+	
+	#bestSeller{
+	background-color: green;
+	
+	text-align: left;
+
+	}
+
+
+	#manufacturer{
+	
 	background-color: aqua;
 	text-align: left;
-	display: block;
-}
+	
+	
+	}
 
 #price {
+	
 	color: maroon;
+	
 	background-color: brown;
-	text-align: left;
-	display:block;
-
-}
-
-#weight {
-	background-color: red;
+	
+	}
+	
+	#weight{
+	
+	
+	background-color:red;
 	font-weight: bold;
-	text-align: left;
-	display:block;
-}
-
-.stars {
+	
+	}
+	
+	.stars {
 	width: 20%;
-	background-color: yellow;
-	display: block;
+	background-color:yellow;
 }
+	
