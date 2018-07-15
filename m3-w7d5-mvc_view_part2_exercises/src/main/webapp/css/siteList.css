@@ -71,10 +71,12 @@ hr {
 #mainDiv {
 	background-color: orange;
 	text-align:left;
+	padding-bottom:5px;
 
 }
 #mainPicture{
 	width: 150px;
+
 }
 
 
@@ -85,7 +87,7 @@ hr {
 	float: left;
 	margin-left: 40px;
 	margin-right:40px;
-	
+	padding:0px;
 }
 
 #detailsDiv {

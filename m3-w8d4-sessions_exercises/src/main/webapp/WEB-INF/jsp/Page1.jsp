@@ -2,24 +2,26 @@
 
 <!DOCTYPE html>
 <html>
+
+<c:url value="/css/favorites.css" var="cssHref" />
+<link rel="stylesheet" href="${cssHref}">
+
 	<head>
 		<title></title>
 	</head>
 	<body>
-	
+	<div id="boxDiv">
 	
 		<h1>Favorite Things Exercise</h1>
 		
 			
-		
-		<form method="GET" action=/Page2>
-		
+			
+	<c:url value="/Page2" var="formAction" />
+	<form method="GET" action="${formAction}">		
 		
 		<label for="favoriteColor"> </label><h2>What is your favorite color?</h2><input type="text" name="favoriteColor" id="favoriteColor">
 		
-		
-		
-		<br>
+
 		<br>
 		<input type="submit" value = "Next >>>"	>
 		
@@ -28,6 +30,6 @@
 		
 		
 		
-		
+		</div>
 	</body>
 </html>

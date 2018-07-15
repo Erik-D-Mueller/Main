@@ -1,0 +1,38 @@
+#boxDiv{
+	
+	text-align:left;
+	border: solid;
+	border-color:black;
+	border-width: 1px;
+
+	
+}
+
+#textDiv{
+	
+	margin:20px;
+	
+	font-size:20px;
+	
+}
+
+h1{
+	
+	
+	margin:20px;
+	
+	
+}
+
+h2{
+	
+	margin:20px;
+	
+	
+}
+
+input{
+	
+	
+	margin:20px;
+}
