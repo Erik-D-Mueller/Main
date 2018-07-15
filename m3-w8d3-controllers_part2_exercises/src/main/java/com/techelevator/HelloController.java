@@ -48,9 +48,6 @@ public class HelloController {
 		
 		newReview.setDateSubmitted(dateSubmitted);
 		
-		System.out.println(" Username:  " +newReview.getUsername() + " Rating: " + newReview.getRating() + " Title: " +  newReview.getTitle() + " Text: " +  newReview.getText());
-		
-
 		reviewDao.save(newReview);
 			
 		request.setAttribute("reviews", reviewDao.getAllReviews());
