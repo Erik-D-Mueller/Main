@@ -1,0 +1,48 @@
+#infoDiv{
+	
+	text-align: center;
+	
+
+	border: solid;
+	padding: 50px;
+}
+
+
+
+
+#topDiv{
+	
+	
+	text-align:center;
+	border:solid;
+	padding: 15px;
+}
+
+#pictureDiv{
+	
+	
+	margin-top: 20px;
+}
+
+#reviewsDiv{
+	
+	margin: 15px;
+	border:solid;
+	
+}
+
+#reviewDiv{
+	
+	margin: 15px;
+	
+	
+	
+}
+
+#btn{
+	
+	font-size: 40px;
+	height: 200px;
+	width: 500px;
+	background-color:powderblue;
+}

@@ -64,10 +64,8 @@ public class HelloController {
 		}
 
 		Favorites favorites = (Favorites) model.get("favorites");
-
-		favorites.setSeason(request.getParameter("favoriteSeason"));
 		
-		System.out.println(favorites.getColor() + favorites.getFood() + favorites.getSeason());
+		favorites.setSeason(request.getParameter("favoriteSeason"));
 		
 		request.setAttribute("favoriteColor", favorites.getColor());
 		request.setAttribute("favoriteFood", favorites.getFood());

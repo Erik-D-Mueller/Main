@@ -11,15 +11,18 @@
 </head>
 <div id="contents">
 
-	<div id="mainDiv">
+	<div id="infoDiv">
+
+
+
 
 <h2> Enter your review and hit submit!</h2>
 		<div id="newReviewForm">
 
-			<c:url value="/home" var="formAction" />
+			<c:url value="/home2" var="formAction" />
 			<form action="${formAction}" method="POST" >
 
-		// title, text and username must match exactly as written in the java class
+
 		<div id="usernameDiv">
 			<label for="username">Username</label> 
 			<input type="text" name="username" id="username"> 

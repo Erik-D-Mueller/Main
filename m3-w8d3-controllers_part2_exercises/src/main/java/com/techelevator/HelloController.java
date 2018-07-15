@@ -21,13 +21,6 @@ public class HelloController {
 	@Autowired
 	private ReviewDao reviewDao;
 	
-	@RequestMapping("/greeting")
-	public String displayGreeting() {
-
-		return "greeting";
-	}
-
-	
 	@RequestMapping("/newReviewInput")
 	public String displayNewReviewInput() {
 
@@ -37,23 +30,8 @@ public class HelloController {
 	
 	
 	
-	@RequestMapping(path= {"/", "/home"}, method=RequestMethod.POST)
+	@RequestMapping(path= {"/", "/home"}, method=RequestMethod.GET)
 	public String displayHome(Review newReview, HttpServletRequest request){
-
-		LocalDateTime dateSubmitted = LocalDateTime.now();
-		
-		newReview.setDateSubmitted(dateSubmitted);
-		
-	//	System.out.println(" Username:  " +newReview.getUsername() + " Rating: " + newReview.getRating() + " Title: " +  newReview.getTitle() + " Text: " +  newReview.getText());
-		
-		
-		
-		
-		reviewDao.save(newReview);
-		
-		
-		
-		
 		
 		request.setAttribute("reviews", reviewDao.getAllReviews());
 		
@@ -63,6 +41,24 @@ public class HelloController {
 
 
 	
+	@RequestMapping(path= ("/home2"), method=RequestMethod.POST)
+	public String displayHome2(Review newReview, HttpServletRequest request){
+
+		LocalDateTime dateSubmitted = LocalDateTime.now();
+		
+		newReview.setDateSubmitted(dateSubmitted);
+		
+		System.out.println(" Username:  " +newReview.getUsername() + " Rating: " + newReview.getRating() + " Title: " +  newReview.getTitle() + " Text: " +  newReview.getText());
+		
+
+		reviewDao.save(newReview);
+			
+		request.setAttribute("reviews", reviewDao.getAllReviews());
+		
+		return "home2";
+
+	}
+
 	
 
 	
