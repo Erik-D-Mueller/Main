@@ -1,10 +1,15 @@
 package com.techelevator.validation.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.techelevator.validation.model.Login;
+
 @Controller
+@RequestMapping("/login")
+		
 public class UserController {
 	// GET: /
 	@RequestMapping(path="/", method=RequestMethod.GET)
@@ -22,8 +27,30 @@ public class UserController {
 	// the
 	// registration view (if validation fails)
 
-	// GET: /login
-	// Return the empty login view
+	
+	
+@RequestMapping(path="/login", method=RequestMethod.GET)
+public String emptyLoginView(Model modelHolder) {
+	
+if(! modelHolder.containsAttribute("login")) {
+	modelHolder.addAttribute("login", new Login());
+ }
+	
+	return "login";
+}
+	
+
+
+	@RequestMapping(path="/confirmation", method=RequestMethod.POST)
+	public String confirmation() {
+		return "Confirmation";
+	}
+		
+		
+	
+
+	
+	
 
 	// POST: /login
 	// Validate the model and redirect to login (if successful) or return the

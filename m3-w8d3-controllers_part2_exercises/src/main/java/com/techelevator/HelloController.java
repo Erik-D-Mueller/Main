@@ -27,9 +27,7 @@ public class HelloController {
 		return "newReviewInput";
 
 	}
-	
-	
-	
+		
 	@RequestMapping(path= {"/", "/home"}, method=RequestMethod.GET)
 	public String displayHome(Review newReview, HttpServletRequest request){
 		
@@ -38,8 +36,6 @@ public class HelloController {
 		return "home";
 
 	}
-
-
 	
 	@RequestMapping(path= ("/home2"), method=RequestMethod.POST)
 	public String displayHome2(Review newReview, HttpServletRequest request){
@@ -56,12 +52,5 @@ public class HelloController {
 
 	}
 
-	
-
-	
-	
-	
-	
-	
 	
 }
