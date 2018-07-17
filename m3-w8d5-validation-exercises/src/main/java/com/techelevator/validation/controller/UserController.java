@@ -1,61 +1,69 @@
 package com.techelevator.validation.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.techelevator.validation.model.Login;
+import com.techelevator.validation.model.Registration;
 
 @Controller
-@RequestMapping("/login")
-		
 public class UserController {
-	// GET: /
-	@RequestMapping(path="/", method=RequestMethod.GET)
-	public String getMainScreen() {
-		return "homePage";
+
+	@RequestMapping(path = "/login", method = RequestMethod.GET)
+	public String emptyLoginView(Model model) {
+
+		if (!model.containsAttribute("login")) {
+			model.addAttribute("login", new Login());
+		}
+
+		return "login";
 	}
 
-	// Add the following Controller Actions
+	@RequestMapping(path = "/login", method = RequestMethod.POST)
+	public String handleLoginForm(@Valid @ModelAttribute("login") Login login, BindingResult result) {
 
-	// GET: /register
-	// Return the empty registration view
+		if (result.hasErrors()) {
+			return "login";
+		}
 
-	// POST: /register
-	// Validate the model and redirect to confirmation (if successful) or return
-	// the
-	// registration view (if validation fails)
+		return "redirect:/confirmation";
+	}
 
-	
-	
-@RequestMapping(path="/login", method=RequestMethod.GET)
-public String emptyLoginView(Model modelHolder) {
-	
-if(! modelHolder.containsAttribute("login")) {
-	modelHolder.addAttribute("login", new Login());
- }
-	
-	return "login";
-}
-	
-
-
-	@RequestMapping(path="/confirmation", method=RequestMethod.POST)
+	@RequestMapping(path = "/confirmation", method = RequestMethod.GET)
 	public String confirmation() {
-		return "Confirmation";
+		return "confirmation";
 	}
-		
-		
-	
 
-	
-	
+	@RequestMapping(path = "/registration", method = RequestMethod.GET)
+	public String emptyRegistrationView(Model model) {
 
-	// POST: /login
-	// Validate the model and redirect to login (if successful) or return the
-	// login view (if validation fails)
+		if (!model.containsAttribute("registration")) {
+			model.addAttribute("registration", new Registration());
+		}
 
-	// GET: /confirmation
-	// Return the confirmation view
+		return "registration";
+	}
+
+	@RequestMapping(path = "/registration", method = RequestMethod.POST)
+	public String handleRegistrationForm(@Valid @ModelAttribute("registration") Registration registration,
+			BindingResult result) {
+
+		if (result.hasErrors()) {
+			return "registration";
+		}
+		return "redirect:/registrationConfirmation";
+	}
+
+	@RequestMapping(path = "/registrationConfirmation", method = RequestMethod.GET)
+	public String registrationConfirmation() {
+		return "registrationConfirmation";
+	}
+
 }

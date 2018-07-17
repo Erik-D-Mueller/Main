@@ -3,9 +3,9 @@
 <c:set var="pageTitle" value="Home Page"/>
 <%@include file="common/header.jspf" %>
 
-<h2>Login</h2>
+<h2>Confirmation</h2>
+<h3>You have successfully logged in</h3>
 
-<c:url value="confirmation"
 
 
 <%@include file="common/footer.jspf" %>
