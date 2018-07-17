@@ -58,11 +58,9 @@ section {
 	float: center;
 }
 
-
-
 .stars {
 	position: inline-block;
-	width: 10%;
+	width: 8%;
 	padding:2px;
 }
 
@@ -72,78 +70,61 @@ section {
 	font-weight: bold;
 	
 	}
+
+	.1stRowHeight{
 	
-	
-	.below {
-	position: block;
+	height: 450px;
 	}
 	
 	
-	.mainLoop {
 	
 	
-	float: left;
+
+	
+
+	
+	.7thRowHeight{
+	
+	height: 30px;
+	}
+	
+	#mainPicture{
+	background-color: orange;
+	
+	height: 40px;
+	}
+	
+	#infoDiv{
+	
+	display: inline-block;
+	
+	}
+	
+	#titleDiv{
+	width: 12%;
+	}
+	
+	#productTable{
+display:inline-block;
+	width: 12%;
+	
+	}
+	
+	#titleTable{
+	width:10%;
+
+	
+	}
+	
+	
+	#productTablesDiv{
+	
+
+	
+	}
+	
+		tr:nth-child(even) {background-color: #f2f2f2;}
 		
+
 		
-}
 	
-	.mainPicture {
-	
-	position: inline;
-	width: 60px;
-	
-	}
-	
-	
-
-	
-
-	
-	.price {
-	
-	color: maroon;
-	
-	}
-	
-	
-	.title-table {
-	
-	background-color:orange;
-	
-	font-size: 25px;
-	float:center;
-	vertical-align:bottom;
-	
-	}
-	
-	.productTable{
-	display: inline;
-	column-width: 200px;
-	font-size: 20px;
-	}
-	
-	#pictureHolder{
-	height:100px;
-	}
-	
-	#bestSellerHolder{
-	height:30px;
-	}
-	
-	.width{
-	
-	width: 150px;
-	
-	}
-	
-	.productTablesDiv{
-	background-color:blue;
-
-	
-	}
-	
-	
-	titleDiv{
-	
-	
-	}

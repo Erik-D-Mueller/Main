@@ -17,10 +17,10 @@ public class ProductController {
 		return "productList";
 	}
 	
-	@RequestMapping({"/productTiles"})
+	@RequestMapping({"/productTile"})
 	public String showProductTiles(HttpServletRequest request) {
 		request.setAttribute("productList", getProducts());
-		return "productTiles";
+		return "productTile";
 	}
 	
 	@RequestMapping("/productTable")

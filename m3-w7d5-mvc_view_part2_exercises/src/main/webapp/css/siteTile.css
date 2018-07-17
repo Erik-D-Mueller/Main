@@ -58,29 +58,12 @@ section {
 	float: center;
 }
 
-h3 {
-	
-	font-size:30px;
-	
-	
-}
-
-p {
-	
-	font-size: 20px;
-	
-	
-}
-
-
-
 .stars {
-	width: 20%;
-	
+	position: inline-block;
+	height:8%;
+	padding:2px;
+
 }
-
-
-
 
 	
 	.bold {
@@ -88,41 +71,65 @@ p {
 	font-weight: bold;
 	
 	}
-	
-	.below {
-	position: block;
-	}
-	
-	.mainLoop {
-	
-	
-	float: left;
-		
-		
-}
-	
-	.mainPicture {
-	
-	position: inline;
-	float: left;
-	width: 21%;
-	
-	}
-	
-	
-	.inline {
-	position: inline;
-	}
-	
-	.notPicture {
-	
-	position: inline;
-	float: left;
 
+	.1stRowHeight{
+	
+	height: 450px;
 	}
 	
-	.price {
 	
-	color: maroon;
+	#price{
+	
+	color: red;
+	
+	}
+	
+	
+
+	
+
+	
+	.7thRowHeight{
+	
+	height: 30px;
+	}
+	
+	#mainPicture{
+	background-color: orange;
+	
+	height: 100px;
+	}
+	
+	#infoDiv{
+	
+	display: inline-block;
+	text-align: center;
+	
+	}
+	
+	#titleDiv{
+	width: 12%;
+	}
+	
+	#productTable{
+display:inline-block;
+	width: 32%;
+	
+	}
+	
+	#titleTable{
+	width:10%;
+
+	
+	}
+	
+	
+
+	
+	
+	
+	#price{
+	
+	text-color: red;
 	
 	}

@@ -20,51 +20,51 @@
         
     </nav>
     <section id="main-content">
+    <h3>Toy Department</h3>
 
-<div class="titleDiv">
+<div id="infoDiv">
 
-       <table class="title-table">
+
+       <table id="title-table">
 				<tr>
-					<td><img  src="img/toy-balls.jpg" class="mainPicture width" /></td>
+					<td> </td>
 				</tr>
 				
 				<tr>
-					<td><span id="bestSellerHolder" class="width"></span></td>
+					<td> </td>
 				</tr>
 				<tr>
-					<td class="width">Name</td>
+					<td >Name</td>
 				</tr>
 				<tr>
-					<td class="width">Rating</td>
+					<td >Rating</td>
 				</tr>
 				<tr>
-					<td class="width">Mfr</td>
+					<td >Mfr</td>
 				</tr>
 				<tr>
-					<td class="width">Price</td>
+					<td >Price</td>
 				</tr>
 				<tr>
-					<td class="width">wt. (in lbs)</td>
+					<td >wt. (in lbs)</td>
 				</tr>
 			</table>
-       </div>
+     
        
-       
-      <div class="productTablesDiv">
       
        <c:forEach var="product" items="${productList}">
 
-				<table class="productTable">
+				<table id="productTable">
 				<tr>
-					<td><img  src="img/${product.imageName}" class="mainPicture width" /></td>
+					<td class="1stRowHeight"><div id="imageDiv"><img  src="img/${product.imageName}" id="mainPicture" /></div></td>
 				</tr>
 				<tr>
-					<td class="width"></td>
+					<td class="2ndRowHeight"></td>
 				</tr>	
 				
 				
 				<tr>
-					<td class="width">${product.name}</td>
+					<td class="3rdRowHeight">${product.name}</td>
 				</tr>			
 					
        			<tr>
@@ -72,23 +72,23 @@
 					<c:choose>
 				
 							<c:when test="${product.averageRating == 5}">
-								<td bgcolor="D3D3D3"><img src="img/5-star.png" class="stars width"/></td>
+								<td class="4thRowHeight" bgcolor="D3D3D3"><img src="img/5-star.png" class="stars"/></td>
 							</c:when>
 
 							<c:when test="${product.averageRating >= 4}">
-								<td bgcolor="D3D3D3"><img src="img/4-star.png" class="stars width"/></td>
+								<td class="4thRowHeight" bgcolor="D3D3D3"><img src="img/4-star.png" class="stars"/></td>
 							</c:when>
 
 							<c:when test="${product.averageRating >= 3}">
-								<td bgcolor="D3D3D3"><img src="img/3-star.png" class="stars width"/></td>
+								<td class="4thRowHeight" bgcolor="D3D3D3"><img src="img/3-star.png" class="stars"/></td>
 							</c:when>
 
 							<c:when test="${product.averageRating >= 2}">
-								<td bgcolor="D3D3D3"><img src="img/2-star.png" class="stars width"/></td>
+								<td class="4thRowHeight" bgcolor="D3D3D3"><img src="img/2-star.png" class="stars"/></td>
 							</c:when>
 
 							<c:otherwise>
-								<td bgcolor="D3D3D3"><img src="img/1-star.png" class="stars width"/></td>
+								<td class="4thRowHeight" bgcolor="D3D3D3"><img src="img/1-star.png" class="stars"/></td>
 							</c:otherwise>
 						
 						</c:choose>
@@ -96,20 +96,20 @@
 						
 				</tr>
 				<tr>		
-					<td>${product.manufacturer}</td>
+					<td class="5thRowHeight" >${product.manufacturer}</td>
 				</tr>	
 				<tr>			
-					<td>$${product.price}</td>
+					<td class="6thRowHeight">$${product.price}</td>
 				</tr>	
        			<tr>			
-					<td>Weight ${product.weightInLbs} lbs</td>
+					<td class="7thRowHeight">${product.weightInLbs}</td>
 				</tr>
        
      
 				</table>
 			</c:forEach>
        </div>
-              
+
     </section>
 </body>
 </html>

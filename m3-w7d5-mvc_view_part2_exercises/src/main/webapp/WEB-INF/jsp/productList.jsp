@@ -29,7 +29,7 @@
 
 			<div id="mainDiv">
 
-				<div id=imageDiv>
+				<div id="imageDiv">
 					<img src="img/${product.imageName}" id="mainPicture" />
 				</div>
 				
@@ -46,6 +46,8 @@
 				<p>	${product.manufacturer} </p>
 				
 					<p id="price">$${product.price}</p>
+					
+					<p id="weight">Weight ${product.weightInLbs} Lbs</p>
 
 
 					<c:choose>
