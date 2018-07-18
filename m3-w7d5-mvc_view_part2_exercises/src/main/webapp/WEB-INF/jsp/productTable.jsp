@@ -14,9 +14,10 @@
     </header>
     <nav>
         <ul>
-            <li><a href="#">Link 1</a></li>
-            <li><a href="#">Link 2</a></li>
-        </ul>
+			<li><a href="productList">List Layout</a></li>
+			<li><a href="productTile">Tile Layout</a></li>
+			<li><a href="productTable">Table Layout</a></li>
+		</ul>
         
     </nav>
     <section id="main-content">

@@ -14,9 +14,9 @@
 	</header>
 	<nav>
 		<ul>
-			<li><a href="#">List Layout</a></li>
-			<li><a href="#">Tile Layout</a></li>
-			<li><a href="#">Table Layout</a></li>
+			<li><a href="productList">List Layout</a></li>
+			<li><a href="productTile">Tile Layout</a></li>
+			<li><a href="productTable">Table Layout</a></li>
 		</ul>
 
 	</nav>

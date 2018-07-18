@@ -3,8 +3,22 @@ html {
 	color: white;
 }
 
+body {
+	
+}
+
 .layer {
-	display: block;
+	display: inline;
+}
+
+#greenDiv {
+	background-color: green;
+	text-align: center;
+}
+
+#yellowDiv {
+	display: inline-block;
+	background-color: yellow;
 }
 
 .box {
@@ -12,7 +26,7 @@ html {
 	width: 120px;
 	height: 120px;
 	text-align: center;
-	display: block;
+	display: inline-block;
 }
 
 .odd {
@@ -23,18 +37,197 @@ html {
 	background-color: #44accf;
 }
 
-.container{
-	
-	width:80%;
-	margin: auto;
-}
-	
-	
-	
+#box_0 {
+	display: block;
 }
 
-.body{
-	
-	width: 120px;
-	
+#box_1 {
+	position: relative;
+	left: 120px;
+	display: block;
 }
+
+#box_2 {
+	position: relative;
+	left: 240px;
+	display: block;
+}
+
+#box_3 {
+	position: relative;
+	left: 360px;
+	display: block;
+}
+
+#box_4 {
+	position: relative;
+	left: 480px;
+	display: block;
+}
+
+#box_5 {
+	position: relative;
+	left: 480px;
+	display: block;
+}
+
+#box_6 {
+	left: 360px;
+	position: relative;
+	display: block;
+}
+
+#box_7 {
+	left: 240px;
+	position: relative;
+	display: block;
+}
+
+#box_8 {
+	left: 120px;
+	position: relative;
+	display: block;
+}
+
+#box_9 {
+	display: block;
+}
+/
+*
+
+
+
+
+
+Block
+
+ 
+
+means
+
+ 
+
+the
+
+ 
+
+div
+
+ 
+
+should
+
+ 
+
+start
+/
+
+
+*
+
+ 
+
+As
+
+ 
+
+far
+
+ 
+
+as
+
+ 
+
+I
+
+ 
+
+can
+
+ 
+
+tell
+
+ 
+
+inline-block
+
+ 
+
+means
+
+ 
+
+treat
+
+ 
+
+that
+
+ 
+
+particular
+
+ 
+
+element
+
+ 
+
+as
+
+ 
+
+inline
+,
+but
+
+ 
+
+treat
+
+ 
+
+it
+
+
+'
+s
+
+ 
+
+child
+
+ 
+
+element
+
+ 
+
+as
+
+ 
+
+block
+,
+and
+
+ 
+
+likely
+
+ 
+
+all
+
+ 
+
+the
+
+ 
+
+subelements
+
+
+.
