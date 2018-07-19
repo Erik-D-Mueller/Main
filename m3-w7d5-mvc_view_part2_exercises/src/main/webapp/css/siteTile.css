@@ -9,6 +9,14 @@ body, header, nav {
 	margin: 0px;
 }
 
+
+#main-content{
+	
+	text-align:center;
+	
+	
+}
+
 header {
 	background-color: #0099CC;
 	color: white;

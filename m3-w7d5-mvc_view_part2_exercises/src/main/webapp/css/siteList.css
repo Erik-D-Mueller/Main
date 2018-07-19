@@ -109,6 +109,14 @@ hr {
 	text-align: left;
 	font-weight: bold;
 	display:block;
+	color: red;
+}
+
+#name{
+	
+	font-weight: bold;
+	
+	
 }
 
 #manufacturer {
@@ -118,7 +126,7 @@ hr {
 }
 
 #price {
-	color: maroon;
+	color: red;
 	background-color: #FFF;
 	text-align: left;
 	display:block;

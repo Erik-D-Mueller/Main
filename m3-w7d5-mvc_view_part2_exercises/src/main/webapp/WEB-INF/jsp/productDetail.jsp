@@ -3,20 +3,14 @@
 
 <c:import url="/WEB-INF/jsp/common/header.jsp">
 </c:import>
-<link rel="stylesheet" href="css/siteTile.css" />
 
-<div id="infoDiv">
+<link rel="stylesheet" href="css/detail.css" />
 
-	<c:forEach var="product" items="${productList}">
 
-		<table id="productTable">
-			<tr>
-				<td class="1stRowHeight"><div id="imageDiv">
-						<a
-							href="/mvc-views-part2-exercises/productDetail?productId=${product.productId}"><img
-							src="img/${product.imageName}" id="mainPicture" /></a>
-					</div></td>
-			</tr>
+<img src="img/${product.imageName}" id="mainPicture" />
+							
+<table id="productTable">
+			
 			<tr>
 				<td class="2ndRowHeight"></td>
 			</tr>
@@ -69,9 +63,6 @@
 			</tr>
 
 		</table>
-	</c:forEach>
-</div>
-
-</section>
-</body>
-</html>
+		<div id="descriptionDiv">
+		<P>Description: ${product.description}</P>
+		</div>
