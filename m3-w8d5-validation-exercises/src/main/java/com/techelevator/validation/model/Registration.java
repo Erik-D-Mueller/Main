@@ -6,15 +6,19 @@ import javax.validation.constraints.AssertTrue;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
 
 public class Registration {
 
+	@NotBlank(message = "First name is required")
+	@Size(max = 20, message = "Maximum of 20 characters allowed for first name")
 	private String firstName;
 
-	@NotBlank(message = "*")
+	@NotBlank(message = "Last name is required")
+	@Size(max= 20, message = "Maximum of 20 characters allowed for last name")
 	private String lastName;
 
 	@NotBlank(message = "Email address is required")
@@ -25,11 +29,13 @@ public class Registration {
 	private String verifyEmail;
 
 	@NotBlank(message = "Password is required")
+	@Size(min=8, message="Password must be atleat 8 characters long")
 	private String password;
 
 	@NotBlank(message = "Verifying the password is required")
 	private String verifyPassword;
 
+	@NotBlank(message = "Birthdate is required")
 	@Pattern(regexp = "^((?:0[0-9])|(?:[1-2][0-9])|(?:3[0-1]))/((?:0[1-9])|(?:1[0-2]))/((?:19|20)\\d{2})$", message = "Please enter a valid formatted birthday")
 	private String birthday;
 
