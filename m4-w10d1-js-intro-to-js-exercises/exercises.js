@@ -44,7 +44,6 @@ function frontAgain(input){
 
 }
 
-
 function alarmClock(dayValue, vacation){
 
 switch(dayValue){
@@ -73,19 +72,23 @@ switch(dayValue){
 }
 
     if(vacation&&dayValue>=1&&dayValue<=5){
-        console.log(day + " 10:00");
-    return;
+        output = day + " 10:00";
+        return output;
+    
     }
-    if(vacation&&(dayValue==1||dayValue==6)){
-        console.log(day + " off");
-    return;
+    if(vacation&&(dayValue==0||dayValue==6)){
+        output = day + " off";
+        return output;
+    
     }
     if( dayValue>=1&&dayValue<=5){
-        console.log(day + " 7:00");
-   return;
+        output = day + " 7:00";
+        return output;
+   
     }
 
-console.log(day + " 10:00");
+output=day + " 10:00";
+return output;
     }
 
     function makeMiddle(arrayInts){
@@ -102,21 +105,38 @@ console.log(day + " 10:00");
         return arrayNew;
     }
 
-
-
-
     // This funciton works, except that the very last odd value always gets cut off, I don't know why, maybe loop related
     function oddOnly(inputArray){
         var newArray = [];
 
-       
-        return newArray; for(var num in inputArray){
-            if(num%2!=0){
-                newArray.push(num);
+       var i;
+        for(i=0; i < inputArray.length; i++){
+            if(inputArray[i]%2!=0){
+                newArray.push(inputArray[i]);
+            }
+        }
+        return newArray; 
+    }
+
+    function weave(array1, array2){
+        
+        var outputArray = [];
+
+        var i;
+        for(i=0; i<Math.max(array1.length, array2.length); i++){
+            
+            if(i<array1.length){
+            outputArray.push(array1[i]);
+            }
+            if(i<array2.length){
+              outputArray.push(array2[i]);
             }
         }
 
+return outputArray;
+
     }
+
 
     function cigarParty(numCigars, isWeekend){
 
@@ -137,21 +157,35 @@ console.log(day + " 10:00");
     function stringSplosion(inputString){
 
         var outputString="";
+        var tempString="";
         var counter1=1;
+        var counter2=0;
+
 
         while(counter2<=inputString.length){
+    
+            counter2=1;
             
-            var counter2=1;
+            tempString="";
+            
             while(counter2 <= counter1 ){
-           
-            outputString = outputString + inputString.slice(0,counter2);
+            tempString = inputString.slice(0,counter2);
             counter2++;
 
             }
-
+        outputString = outputString + tempString;
         counter1++;
         }
 
     return outputString;
+
+    }
+
+    function fizzBuzz(input){
+
+if(input%3==0 && input%5==0){return "FizzBuzz"};
+if(input%3==0){return "Fizz";}
+if(input%5==0){return "Buzz";}
+return input;
 
     }
