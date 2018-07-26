@@ -48,7 +48,7 @@ public class StoreController {
 	@RequestMapping(path="/store")
     public String getStore(ModelMap model) {
 		model.addAttribute("products", productDAO.getProducts());
-        return "store/getStore";
+		return "store/getStore";
     }
 
 	@RequestMapping(path="/store/detail/{sku}")
@@ -203,7 +203,7 @@ public class StoreController {
     public String viewCart(ModelMap model) {
         return "/store/viewCart";
     }
-
+// What is the scope of this modelMap?
     private ShoppingCart getActiveShoppingCart(ModelMap model) {
         if (model.get("shoppingCart") == null) {
             model.addAttribute("shoppingCart", new ShoppingCart());
