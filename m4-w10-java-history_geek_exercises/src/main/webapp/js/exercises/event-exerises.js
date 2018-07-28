@@ -2,115 +2,98 @@
 // are JSTL and el included already since we have jquery?
 // or can I not use jstl and jquery since this is not a jsp page?
 
-$(document).ready(function(){
+$(document).ready(function() {
 
+	var sameAddressBox = $("#SameShipping");
+	sameAddressBox.click(function(event) {
+
+		$("#ShippingAddress1").val($("#BillingAddress1").val());
+
+		$("#ShippingAddress2").val($("#BillingAddress2").val());
+
+		$("#ShippingCity").val($("#BillingCity").val());
+
+		$("#ShippingState").val($("#BillingState").val());
+
+		$("#ShippingPostalCode").val($("#BillingPostalCode").val());
+
+	});
+
+	$('input:radio[name="ShippingType"]').change(function() {
+
+		var subtotal = parseFloat($("#subtotal").text().slice(11));
+
+		var shippingAmount = parseFloat($(this).attr("data-cost"));
+
+		grandTotal = subtotal + shippingAmount;
+
+		var grandTotal = grandTotal.toFixed(2).toString();
+
+		$("#shipping span").text("$" + $(this).attr("data-cost"));
+
+		$("#grandtotal span").text("$" + grandTotal);
+
+		console.log(subtotal + " + " + shippingAmount + " = " + grandTotal);
+
+	});
+
+	var gameRestartButton = $("#btnRestart");
+	gameRestartButton.click(function(event) {
+
+		console.log("You clicked the restart button!");
+
+	});
+
+	// Is it good practice to put these variables out here?
+	// Does this stuff out here get loaded?
 	
-var sameAddressBox = $("#SameShipping");
-sameAddressBox.click( function (event) {
+	var row = 0;
+	var column = 0;
+	var prevRow = 0;
+	var prevColumn = 0;
 	
-	$("#ShippingAddress1").val(    $("#BillingAddress1").val()        );
-	
-	$("#ShippingAddress2").val(    $("#BillingAddress2").val()    );
-	
-	$("#ShippingCity").val(  $("#BillingCity").val()    );	
-	
-	$("#ShippingState").val(   $("#BillingState").val()    );
-	
-	$("#ShippingPostalCode").val(    $("#BillingPostalCode").val()  );
-	
-});	
-	
-$('input:radio[name="ShippingType"]').change(function() {
+	var gameInput = document.getElementById("game");
+	gameInput.addEventListener("keyup", function(event) {
+
+		keyPushed = event.key;
+
+		console.log("You pressed a key! " + keyPushed)
+
+		if (keyPushed === "ArrowDown" && row <= 8) {
+			
+			prevRow = row;
+			prevColumn = column;
+			row++;
+		}
+		if (keyPushed === "ArrowUp" && row >= 1) {
+			prevRow = row;
+			prevColumn = column;
+			row--;
+		}
+
+		if (keyPushed ==="ArrowLeft" && column >= 1) {
+			prevColumn = column;
+			prevRow = row;
+			column--;
+		}
+		if (keyPushed === "ArrowRight" && column <= 8) {
+			
+			prevColumn = column;
+			prevRow = row;
+			column++;
+			
+		}
+
 		
-	var subtotal = parseFloat($("#subtotal").text().slice(11));
+
+		var prevCoords = "#row_" + prevRow + "_column_" + prevColumn;
 	
-    
+		var coords = "#row_" + row + "_column_" + column;
 
-	
+		$(prevCoords).removeClass("ship");
 
+		$(coords).addClass("ship");
 
-var shipping;
-	switch($(this).val()){
+	});
 
-		case "Standard":
-		console.log("33");
-		
-		break;
-		case "Express":
-		console.log("express44");
-		break;
-		case "Two-Day":
-		console.log("Two-day55");
-		break;
-		case "Overnight":
-		console.log("Overnight66");
-
-	}
-
-});
-	
-
-
-
-
-
-
-
-
-
-
-
-var gameRestartButton=$("#btnRestart");
-gameRestartButton.click(function(event){
-
-	console.log(  "You clicked the restart button!"  );
-
-});
-
-
-// Is it good practice to put these variables out here?
-// Does this stuff out here get loaded?
-var row = 0;
-var column=0;
-
-var gameInput = document.getElementById("game");
-gameInput.addEventListener("keyup", function(event){
-
-	console.log("You keyed up! " + event.key)
-
-if(event.key=="ArrowDown" && row<=8){
-	row++;
- }
- if(event.key=="ArrowUp" && row>=1){
-	row--;
- }
-if(event.key=="LeftArrow" && column>=1){
-	column--;
-}
-if(event.key=="RightArrow" && column<=8){
-	column++;
-}
-
-
-var row = 2;
-var column=3;
-
-location = "#row_" + row + "_column_" + column;
-
-
-$(location).addClass("ship");
-
-
-var table = $("#gameboard")[0];
-
-var cell = table.rows[2].cells[2];
-
-var $cell = $(cell);
-
-$(cell).addClass("ship");
-
-
-});
-
-
-});   // End of ready function
+}); // End of ready function
