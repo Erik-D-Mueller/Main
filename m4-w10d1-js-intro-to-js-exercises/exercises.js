@@ -69,7 +69,7 @@ switch(dayValue){
     day = "Saturday";
     
     
-}
+    }
 
     if(vacation&&dayValue>=1&&dayValue<=5){
         output = day + " 10:00";
@@ -87,9 +87,13 @@ switch(dayValue){
    
     }
 
-output=day + " 10:00";
-return output;
+        output=day + " 10:00";
+        return output;
     }
+
+
+
+
 
     function makeMiddle(arrayInts){
 
@@ -133,7 +137,7 @@ return output;
             }
         }
 
-return outputArray;
+    return outputArray;
 
     }
 
@@ -183,9 +187,51 @@ return outputArray;
 
     function fizzBuzz(input){
 
-if(input%3==0 && input%5==0){return "FizzBuzz"};
-if(input%3==0){return "Fizz";}
-if(input%5==0){return "Buzz";}
-return input;
+    if(input%3==0 && input%5==0){return "FizzBuzz"};
+    if(input%3==0){return "Fizz";}
+    if(input%5==0){return "Buzz";}
+    return input;
+
+    }
+
+
+      // Im skipping countValues because I
+      // think theres an error in the code that tests it.
+    function countValues(inputArray){
+
+        var map = new Map();
+
+        inputArray.forEach(function(number){
+
+
+            if(!map.has(number)){
+
+                map.set(number,1);
+            }
+            else{
+
+                var temp = map.get(number) + 1;
+                map.set(number, temp);
+            }
+
+        });
+
+           return map;
+
+    }
+
+    function reverseArray(inputArray){
+
+    var stack = new Array();
+
+    var outputArray = new Array();
+
+    inputArray.forEach(function(number){
+
+        outputArray.unshift(number);
+
+    });
+
+    return outputArray;
 
     }
