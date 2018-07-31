@@ -1,0 +1,59 @@
+
+
+.bigPhoto{
+
+width: 220px;
+
+
+}
+
+.bigPhotoDiv{
+
+    text-align: center;
+}
+
+
+#banner{
+    position: relative;
+    text-align: center;
+    color:white;
+}
+
+.textDiv{
+
+    position: absolute;
+    left: 10px;
+    top: 1px;
+    
+    
+    }
+
+
+.top-center{
+
+position: absolute;
+left: 24px;
+top: 1px;
+}
+
+.feature{
+
+   
+    width: 100px;
+}
+
+.featureDiv{
+
+    text-align:center;
+}
+
+table{
+
+    width:200px;
+    
+}
+
+.tablesContainer{
+
+
+}

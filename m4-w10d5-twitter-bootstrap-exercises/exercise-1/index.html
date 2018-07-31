@@ -3,73 +3,166 @@
     <head>
       <meta charset="utf-8">
       <title>Tech Elevator</title>
-      <!-- Main Style Sheet
-      <link rel="stylesheet" href="css/main.css">
-       -->
-      <!-- Respond.js for IE 8 or less only -->
-      <!--[if (lt IE 9) & (!IEMobile)]>
-        <script src="js/vendor/respond.min.js"></script>
-      <![endif]-->
+      
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link href="style.css" rel="stylesheet" />
+      <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+      <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+     
+    
     </head>
     <body>
       <header>
+        
+        <div class="row">
+        
+          <div class="col-md-2">
         <img src="img/te_logo.png" alt="Tech Elevator" width="120">
-        <ul>
-          <li><a href="#welcome">Welcome</a></li>
-          <li><a href="#features">Features</a></li>
-          <li><a href="#impact">Impact</a></li>
-          <li><a href="#signup">Sign Up</a></li>
-        </ul>
+        </div>
+        
+        <div class="col-md-1">
+          <a href="#welcome">Welcome</a>
+          </div>
+
+          <div class="col-md-1">
+          <a href="#features">Features</a>
+        </div>
+
+          <div class="col-md-1">
+          <a href="#impact">Impact</a>
+        </div>
+
+          <div class="col-md-1">
+          <a href="#signup">Sign Up</a>
+        </div>
+
+      </div>
+
       </header>
 
-      <h1>Big Welcome Message</h1>
-      <p>Ingenious marketing copy. And some more ingenious marketing copy.<a href="#features">Learn more</a></p>
+
+
+      <div class="container" id="banner">
+          <img src="img/croppedTE.jpg" alt="Photo Three" style="width: 100%;">
+          <div class="top-center"><h1>Big Welcome Message</h1>
+          <p>Ingenious marketing copy. And some more ingenious marketing copy.<a href="#features"> Learn more</a></p>
+        </div>
+      </div>
+
+
 
       <!-- FEATURES SECTION -->
       <section id="features">
         <h1>Features</h1>
-        <h2>Feature 1</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo. </p>
-        <h2>Feature 2</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo. </p>
-        <h2>Feature 3</h2>
-        <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
+        
+      <div class="row">
+                  <div id="feature1" class="col-md-4 featureDiv">
+                  <img src="img/Feature1Photo.png" alt="Photo Three" class="feature">
+                  <h2>Feature 1</h2>
+                  <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo. </p>
+                  </div>
+                  
+                <div id="feature2" class="col-md-4 featureDiv">
+                    <img src="img/Feature2Photo.png" alt="Photo Three" class="feature">
+                  <h2>Feature 2</h2>
+                  <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo. </p>
+                </div>
+                
+                <div id="feature3" class="col-md-4 featureDiv">
+                    <img src="img/Feature3Photo.png" alt="Photo Three" class="feature">
+                  <h2>Feature 3</h2>
+                  <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
+                  </div>
+                  
+
+      </div>
+
+
+      <div class="row">
+        <div id="feature4" class="col-md-4 featureDiv">
+            <img src="img/Feature4Photo.png" alt="Photo Three" class="feature">
         <h2>Feature 4</h2>
         <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo. </p>
-        <h2>Feature 5</h2>
+        </div>
+        
+        <div id="feature5" class="col-md-4 featureDiv">
+            <img src="img/Feature5Photo.png" alt="Photo Three" class="feature">
+            <h2>Feature 5</h2>
         <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo. </p>
-        <h2>Feature 6</h2>
+        </div>
+
+        <div id="feature6" class="col-md-4 featureDiv"  >
+            <img src="img/Feature6Photo.png" alt="Photo Three" class="feature">
+            <h2>Feature 6</h2>
         <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
+        </div></div>
+      </div>
+      
       </section><!-- /.row -->
 
       <!-- IMPACT SECTION -->
       <section id="impact">
         <h1>Impact</h1>
-        <img src="img/photo_one.jpg" alt="Photo One">
-        <blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin euismod, nulla pretium commodo ultricies</p></blockquote>
-        <img src="img/photo_two.jpg" alt="Photo Two">
+
+        <div class="row">
+        
+          <div id="photo1" class="col-md-4 bigPhotoDiv">
+        <img src="img/photo_one.jpg" class = "bigPhoto" alt="Photo One">
+        <div class="textDiv"><blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin euismod, nulla pretium commodo ultricies</p></blockquote>
+          </div></div>
+        
+          <div id="photo2" class="col-md-4 bigPhotoDiv">
+        <img src="img/photo_two.jpg" class = "bigPhoto" alt="Photo Two">
+        <div class="textDiv"><blockquote><p>Lorem ipsum dolor sit amet</p></blockquote>
+          </div></div>
+
+          <div id="photo3" class="col-md-4 bigPhotoDiv bigPhotoDiv">
+        <img src="img/photo_three.jpg" class = "bigPhoto" alt="Photo Three">
+        <div class="textDiv"><blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin euismod, nulla</p></blockquote>
+        </div></div>
+        
+      </div>
+
+
+<div class="row">
+
+    <div id="photo4" class="col-md-4 bigPhotoDiv bigPhotoDiv">
+        <img src="img/photo_four.jpg" class="bigPhoto" alt="Photo Four">
         <blockquote><p>Lorem ipsum dolor sit amet</p></blockquote>
-        <img src="img/photo_three.jpg" alt="Photo Three">
-        <blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin euismod, nulla</p></blockquote>
-        <img src="img/photo_four.jpg" alt="Photo Four">
-        <blockquote><p>Lorem ipsum dolor sit amet</p></blockquote>
-        <img src="img/photo_five.jpg" alt="Photo Five">
+        </div>
+        
+        <div id="photo5" class="col-md-4 bigPhotoDiv bigPhotoDiv">
+        <img src="img/photo_five.jpg" class = "bigPhoto" alt="Photo Five">
         <blockquote ><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin euismod, nulla pretium commodo ultricies</p></blockquote>
-        <img src="img/photo_six.jpg" alt="Photo Six">
+        </div>
+        
+        <div id="photo5and6" class="col-md-4 bigPhotoDiv bigPhotoDiv">
+        <img src="img/photo_six.jpg" class = "bigPhoto" alt="Photo Six">
         <blockquote><p>Lorem ipsum dolor sit amet elit.</p></blockquote>
-        <img src="img/photo_seven.jpg" alt="Photo Seven">
+        <img src="img/photo_seven.jpg" class = "bigPhoto" alt="Photo Seven">
         <blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin euismod, nulla pretium commodo ultricies</p></blockquote>
+      </div>
+    </div>
+     
+     
+     
+     
       </section><!-- /#impact -->
 
       <!-- SIGNUP SECTION -->
       <section id="signup">
-          <h1>Sign up now!</h1>
+          <h2>Sign up now!</h2>
+            <div class="row tablesContainer">
+          
+          <div id="basic" class="col-md-4">
             <table>
               <thead>
                 <tr>
-                  <th>
-                    <h2>Basic Plan</h2>
-                    <div>$19</div>
+                  <th colspan="2" style="background-color:#0099ff; text-align: center; color:white;">
+                    <h4>   Basic Plan</h4>
+                    <div><h1>$19</h1></h2></div>
                   </th>
                 </tr>
               </thead>
@@ -84,12 +177,20 @@
                 <tr><td>Feature</td><td>Name</td></tr>
               </tbody>
             </table>
+            
+            </div>
+
+
+
+
+            <div id="premium" class="col-md-4">
+
             <table>
               <thead>
                 <tr>
-                  <th>
-                    <h2>Premium Plan</h2>
-                    <div>$29</div>
+                    <th colspan="2" style="background-color:#3b9b37; text-align: center; color:white;">
+                    <h4>Premium Plan</h4>
+                    <div><h1>$29</h1></div>
                   </th>
                 </tr>
               </thead>
@@ -104,12 +205,19 @@
                 <tr><td>Feature</td><td>Name</td></tr>
               </tbody>
             </table>
+
+              </div>
+
+
+
+
+              <div id="pro" class="col-md-4">
             <table>
               <thead>
                 <tr>
-                  <th>
-                    <h2>Pro Plan</h2>
-                    <div>$39</div>
+                    <th colspan="2" style="background-color:#e54b4b; text-align: center; color:white;">
+                    <h4>Pro Plan</h4>
+                    <div><h1>$39</h1></div>
                   </th>
                 </tr>
               </thead>
@@ -124,6 +232,10 @@
                 <tr><td>Feature</td><td>Name</td></tr>
               </tbody>
             </table>
+            </div>
+            </div>
+
+
       </section><!-- /#signup -->
 
 </body>
