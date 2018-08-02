@@ -33,8 +33,6 @@ $(document).ready(function() {
 
 		$("#grandtotal span").text("$" + grandTotal);
 
-		console.log(subtotal + " + " + shippingAmount + " = " + grandTotal);
-
 	});
 
 	var gameRestartButton = $("#btnRestart");
