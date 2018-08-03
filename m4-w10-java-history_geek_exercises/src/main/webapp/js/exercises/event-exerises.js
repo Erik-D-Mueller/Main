@@ -51,7 +51,7 @@ $(document).ready(function() {
 	var prevColumn = 0;
 	
 	var gameInput = document.getElementById("game");
-	gameInput.addEventListener("keyup", function(event) {
+	gameInput.on("keyup", function(event) {
 
 		keyPushed = event.key;
 

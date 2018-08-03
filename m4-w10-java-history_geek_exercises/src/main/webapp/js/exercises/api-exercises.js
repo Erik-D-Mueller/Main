@@ -17,14 +17,17 @@ $(document).ready(function () {
 		
 		$.ajax({
 			
+			// This below lines gets concatenated to the URL, I could concatenate it myself, but the below format
+			// is compatible with POST as well, so it's more flexible incase I were to change this to post.
+			
 			data: {billingZipCode: zip, subtotal: mySubtotal},
 			url: apiUrl,
             type: "GET",
             dataType: "json"
             	
-        }).done(function (data) {
+        }).done(function (output) {
         	
-		   var tax = data.taxTotal;
+		   var tax = output;
 		   
 		   $("#tax span").text("$" + tax);
 		   console.log(mySubtotal +  "   "  + zip + "  " + tax);
