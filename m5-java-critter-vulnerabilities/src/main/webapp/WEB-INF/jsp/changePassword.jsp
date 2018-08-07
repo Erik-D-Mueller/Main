@@ -2,15 +2,21 @@
 
 <c:import url="/WEB-INF/jsp/header.jsp" />
 
+<c:url var="pwValidationSrc" value="/passwordValidation.js" />
+<script src="${pwValidationSrc}"></script>
+
 <script type="text/javascript">
 	$(document).ready(function () {
 	
 		$("#changePasswordForm").validate({
 			
 			rules : {
-				
 				password : {
-					required : true
+					required : true,
+					minlength : 10,
+					maxlength : 128,
+					complexPassword : true,
+					noMoreThan2Duplicates : true
 				},
 				confirmPassword : {
 					required : true,		
@@ -35,6 +41,7 @@
 <div class="row">
 	<div class="col-md-5">
 		<form action="${formAction}" method="POST" id="changePasswordForm">
+			<input type="hidden" name="CSRF_TOKEN" value="${CSRF_TOKEN}" />
 			<div class="form-group">
 				<label for="password">New Password: </label>
 				<input type="password" id="password" name="password" class="form-control" />	
