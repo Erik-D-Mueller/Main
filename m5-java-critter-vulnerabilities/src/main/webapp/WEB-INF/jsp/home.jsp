@@ -19,10 +19,17 @@
 				<c:param name="userName" value="${message.fromUsername}" />
 			</c:url>
 		
+			<!--  
 			
-			<span class="username"><a href="${messageHref}">${message.fromUsername}</a></span>
+			The c:outs below are to prevent someone from inserting browser side code as a 
+			message or username value into the database, then when the website goes to printthat code getting executed the next time that record
+			that username or message, it actually executes the code instead.  The c:out pretty
+			much guarantees that it only displays the value, and doesn't execute it.
+			
+			-->
+			<span class="username"><a href="${messageHref}">   <c:out value = "${message.fromUsername}"/> </a></span>
 		
-			<span class="message-text">${message.text}</span>
+			<span class="message-text"> <c:out value = "${message.text}"> </c:out></span>
 		
 			<time class="timeago" datetime="${message.createTime}">${message.createTime}</time>
 		

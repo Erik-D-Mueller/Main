@@ -76,10 +76,8 @@
 					
 					
 					
-					<!--  Where is it receiving this "currentUser" from?
-					
-					
-					-->
+					<!--  Where is it receiving this "currentUser" from?  I don't see
+					it being "sent" anywhere from the controllers				-->
 					
 					
 					
