@@ -5,6 +5,9 @@
 <script type="text/javascript">
 	$(document).ready(function () {
 	
+		
+		// Is this stuff not supposed to be here?  Is this a mistake?
+		// This is the login page, not the SignUp page, why does it have "confirm password?"
 		$("form").validate({
 			
 			rules : {

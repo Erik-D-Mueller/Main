@@ -23,11 +23,15 @@ public class AuthenticationController {
 		this.userDAO = userDAO;
 	}
 
+	
+	// This catches the initital request for a blank login page which is just an html link and returns the blank page
 	@RequestMapping(path="/login", method=RequestMethod.GET)
 	public String displayLoginForm() {
 		return "login";
 	}
 	
+	
+	// THis catches the request FROM the login page after we hit "submit" and send in our 
 	@RequestMapping(path="/login", method=RequestMethod.POST)
 	public String login(@RequestParam String userName, 
 						@RequestParam String password, 
@@ -42,6 +46,8 @@ public class AuthenticationController {
 		}
 	}
 
+	
+	
 	@RequestMapping(path="/logout", method=RequestMethod.POST)
 	public String logout(ModelMap model, HttpSession session) {
 		model.remove("currentUser");
