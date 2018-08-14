@@ -28,7 +28,7 @@ public class Exercises {
 		
 		String total=new String();
 		
-		total = a + b + b + a;
+		total = a + b  + b + a;
 		
 		return total;
 	}

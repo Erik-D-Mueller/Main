@@ -30,4 +30,27 @@
   	<url-pattern>*.jpg</url-pattern>
   	<url-pattern>*.gif</url-pattern>
   </servlet-mapping>
+
+<filter>
+<filter-name>authorizationFilter</filter-name>
+<filter-class>com.techelevator.critter.security.AuthorizationFilter</filter-class>
+</filter>
+
+<filter-mapping>
+<filter-name>authorizationFilter</filter-name>
+<servlet-name>springmvc</servlet-name>
+</filter-mapping>
+
+<filter>
+<filter-name>csrfFilter</filter-name>
+<filter-class>com.techelevator.critter.security.CSRFFilter</filter-class>
+</filter>
+
+<filter-mapping>
+<filter-name>csrfFilter</filter-name>
+<servlet-name>springmvc</servlet-name>
+</filter-mapping>
+
+<!--  The above was given to us by Steve through Ryver.  -->
+
 </web-app>
