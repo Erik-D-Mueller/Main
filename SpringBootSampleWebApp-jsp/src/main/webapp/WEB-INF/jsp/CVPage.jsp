@@ -1,5 +1,13 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html>
 
+<html>
+
+<link href="<c:url value="/css/style.css"/>" rel="stylesheet" type="text/css" />
+
+<script src="/js/run.js"></script>
+
+<body>
 
 <h2>CV Page</h2>
 
@@ -23,9 +31,15 @@
 <tr>
 
 <td>
-<form>
-  Upload CV: <input type="file" name="CV">
-</form>
+
+ <div id="wrapper">
+ <input type="file" accept="image/*" onchange="preview_image(event)">
+ <img id="output_image"/>
+ </div>
+ 
+ 
+ 
+
 </td>
 </tr>
 
@@ -34,3 +48,5 @@
 <form method="POST" action="completeApplication">
 	<input type="submit" value="Submit Application" />
 </form>
+</body>
+</html>
